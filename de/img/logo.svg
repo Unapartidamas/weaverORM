@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Weaver ORM logo">
+  <!-- Purple circle background -->
+  <circle cx="32" cy="32" r="32" fill="#7c3aed"/>
+  <!-- "W" letter in white -->
+  <text
+    x="32"
+    y="44"
+    text-anchor="middle"
+    font-family="system-ui, -apple-system, sans-serif"
+    font-size="36"
+    font-weight="800"
+    fill="#ffffff"
+    letter-spacing="-1"
+  >W</text>
+</svg>
