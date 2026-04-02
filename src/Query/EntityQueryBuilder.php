@@ -1860,7 +1860,8 @@ final class EntityQueryBuilder
             foreach ($positionalParams as $i => $val) {
                 $stmt->bindValue($i + 1, $val);
             }
-            return $stmt->execute();
+            file_put_contents("/tmp/qb_exec.log", $sql . " | " . json_encode($positional) . "
+", FILE_APPEND); return $stmt->execute();
         }
 
         $sql    = $this->buildSQL();
@@ -1876,7 +1877,8 @@ final class EntityQueryBuilder
         foreach ($positional as $i => $val) {
             $stmt->bindValue($i + 1, $val);
         }
-        return $stmt->execute();
+        file_put_contents("/tmp/qb_exec.log", $sql . " | " . json_encode($positional) . "
+", FILE_APPEND); return $stmt->execute();
     }
 
     private function buildUnionSQL(): array
