@@ -21,6 +21,17 @@ class Statement
             default => self::resolvePdoType($type),
         };
 
+        if (is_object($value) && !$value instanceof \BackedEnum) {
+            if (method_exists($value, 'getId')) {
+                $value = $value->getId();
+            } elseif (property_exists($value, 'id')) {
+                $value = $value->id;
+            } else {
+                throw new \InvalidArgumentException(
+                    sprintf('Cannot bind object of class "%s" as SQL parameter.', get_class($value))
+                );
+            }
+        }
         $this->stmt->bindValue($param, $value, $pdoType);
     }
 

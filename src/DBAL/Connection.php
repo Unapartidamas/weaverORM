@@ -47,6 +47,19 @@ class Connection
                     default => PDO::PARAM_STR,
                 };
             }
+            if (is_object($value) && !$value instanceof \BackedEnum && !$value instanceof ParameterType) {
+                if (method_exists($value, 'getId')) {
+                    $value = $value->getId();
+                } elseif (property_exists($value, 'id')) {
+                    $value = $value->id;
+                } elseif ($value instanceof \DateTimeInterface) {
+                    $value = $value->format('Y-m-d H:i:s');
+                } else {
+                    throw new \InvalidArgumentException(
+                        sprintf('Cannot bind object of class "%s" as SQL parameter.', get_class($value))
+                    );
+                }
+            }
             $stmt->bindValue($index++, $value, $type);
         }
 
