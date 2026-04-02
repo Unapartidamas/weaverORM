@@ -1,0 +1,27 @@
+{
+  "id": "configuration",
+  "title": "Symfony कॉन्फ़िगरेशन",
+  "description": "Weaver ORM को config/packages/weaver.yaml के माध्यम से कॉन्फ़िगर किया जाता है। यह पृष्ठ सभी उपलब्ध विकल्पों को कवर करता है।",
+  "source": "@site/i18n/hi/docusaurus-plugin-content-docs/current/configuration.md",
+  "sourceDirName": ".",
+  "slug": "/configuration",
+  "permalink": "/weaver/hi/docs/configuration",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/weaver-orm/weaver/tree/main/website/docs/configuration.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "configuration",
+    "title": "Symfony कॉन्फ़िगरेशन"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "त्वरित प्रारंभ",
+    "permalink": "/weaver/hi/docs/quick-start"
+  },
+  "next": {
+    "title": "एंटिटी मैपिंग",
+    "permalink": "/weaver/hi/docs/entity-mapping"
+  }
+}

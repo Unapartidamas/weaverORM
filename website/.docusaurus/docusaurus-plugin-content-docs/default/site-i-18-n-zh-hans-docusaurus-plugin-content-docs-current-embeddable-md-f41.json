@@ -1,0 +1,27 @@
+{
+  "id": "embeddable",
+  "title": "嵌入对象",
+  "description": "An embeddable (also called a value object in DDD terminology) is a PHP class whose properties are stored as columns in the parent entity's table — no join, no separate table. Weaver manages the column mapping and prefix logic via a dedicated AbstractEmbeddableMapper.",
+  "source": "@site/i18n/zh-Hans/docusaurus-plugin-content-docs/current/embeddable.md",
+  "sourceDirName": ".",
+  "slug": "/embeddable",
+  "permalink": "/weaver/zh-Hans/docs/embeddable",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/weaver-orm/weaver/tree/main/website/docs/embeddable.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "embeddable",
+    "title": "嵌入对象"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "关联关系",
+    "permalink": "/weaver/zh-Hans/docs/relations"
+  },
+  "next": {
+    "title": "继承映射",
+    "permalink": "/weaver/zh-Hans/docs/inheritance"
+  }
+}

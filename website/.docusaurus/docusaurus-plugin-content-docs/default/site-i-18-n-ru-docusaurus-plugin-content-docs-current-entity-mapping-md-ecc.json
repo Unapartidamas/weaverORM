@@ -1,0 +1,27 @@
+{
+  "id": "entity-mapping",
+  "title": "Маппинг сущностей",
+  "description": "Weaver ORM разделяет доменные объекты и метаданные сохранения, размещая всю информацию о маппинге в выделенном классе-маппере. На этой странице описаны все аспекты конфигурации маппера.",
+  "source": "@site/i18n/ru/docusaurus-plugin-content-docs/current/entity-mapping.md",
+  "sourceDirName": ".",
+  "slug": "/entity-mapping",
+  "permalink": "/weaver/ru/docs/entity-mapping",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/weaver-orm/weaver/tree/main/website/docs/entity-mapping.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "entity-mapping",
+    "title": "Маппинг сущностей"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Конфигурация Symfony",
+    "permalink": "/weaver/ru/docs/configuration"
+  },
+  "next": {
+    "title": "Связи",
+    "permalink": "/weaver/ru/docs/relations"
+  }
+}

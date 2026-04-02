@@ -1,0 +1,27 @@
+{
+  "id": "embeddable",
+  "title": "Objetos Embebidos",
+  "description": "Un embeddable (también llamado objeto de valor en terminología DDD) es una clase PHP cuyas propiedades se almacenan como columnas en la tabla de la entidad padre — sin join, sin tabla separada. Weaver gestiona el mapeo de columnas y la lógica de prefijos mediante un AbstractEmbeddableMapper dedicado.",
+  "source": "@site/i18n/es/docusaurus-plugin-content-docs/current/embeddable.md",
+  "sourceDirName": ".",
+  "slug": "/embeddable",
+  "permalink": "/weaver/es/docs/embeddable",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/weaver-orm/weaver/tree/main/website/docs/embeddable.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "embeddable",
+    "title": "Objetos Embebidos"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Relaciones",
+    "permalink": "/weaver/es/docs/relations"
+  },
+  "next": {
+    "title": "Herencia de Mapeo",
+    "permalink": "/weaver/es/docs/inheritance"
+  }
+}

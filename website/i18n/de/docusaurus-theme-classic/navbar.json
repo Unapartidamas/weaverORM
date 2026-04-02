@@ -1,0 +1,14 @@
+{
+  "title": {
+    "message": "Weaver ORM"
+  },
+  "item.label.Docs": {
+    "message": "Dokumentation"
+  },
+  "item.label.PyroSQL": {
+    "message": "PyroSQL"
+  },
+  "item.label.GitHub": {
+    "message": "GitHub"
+  }
+}

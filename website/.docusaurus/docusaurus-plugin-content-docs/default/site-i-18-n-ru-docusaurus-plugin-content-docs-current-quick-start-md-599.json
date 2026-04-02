@@ -1,0 +1,27 @@
+{
+  "id": "quick-start",
+  "title": "Быстрый старт",
+  "description": "Это руководство проведёт вас через полный рабочий пример: определение сущности User, написание маппера для неё и выполнение базовых операций сохранения с использованием EntityWorkspace.",
+  "source": "@site/i18n/ru/docusaurus-plugin-content-docs/current/quick-start.md",
+  "sourceDirName": ".",
+  "slug": "/quick-start",
+  "permalink": "/weaver/ru/docs/quick-start",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/weaver-orm/weaver/tree/main/website/docs/quick-start.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "quick-start",
+    "title": "Быстрый старт"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Установка",
+    "permalink": "/weaver/ru/docs/installation"
+  },
+  "next": {
+    "title": "Конфигурация Symfony",
+    "permalink": "/weaver/ru/docs/configuration"
+  }
+}

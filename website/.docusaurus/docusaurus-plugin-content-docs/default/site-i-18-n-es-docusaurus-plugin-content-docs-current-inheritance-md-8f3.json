@@ -1,0 +1,27 @@
+{
+  "id": "inheritance",
+  "title": "Herencia de Mapeo",
+  "description": "Weaver ORM supports three inheritance patterns. Choose based on how similar your subclass schemas are and how often you need to query across all types in a single SELECT.",
+  "source": "@site/i18n/es/docusaurus-plugin-content-docs/current/inheritance.md",
+  "sourceDirName": ".",
+  "slug": "/inheritance",
+  "permalink": "/weaver/es/docs/inheritance",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/weaver-orm/weaver/tree/main/website/docs/inheritance.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "inheritance",
+    "title": "Herencia de Mapeo"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Objetos Embebidos",
+    "permalink": "/weaver/es/docs/embeddable"
+  },
+  "next": {
+    "title": "Concerns y Traits",
+    "permalink": "/weaver/es/docs/concerns"
+  }
+}

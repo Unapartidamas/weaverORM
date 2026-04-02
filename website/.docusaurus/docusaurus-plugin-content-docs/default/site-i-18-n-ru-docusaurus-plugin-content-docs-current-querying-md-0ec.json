@@ -1,0 +1,27 @@
+{
+  "id": "querying",
+  "title": "Построитель Запросов",
+  "description": "EntityQueryBuilder is Weaver ORM's fluent query API. It wraps Doctrine DBAL with full entity awareness: results are automatically hydrated into entity objects, global scopes are applied, and soft-delete filters are managed transparently.",
+  "source": "@site/i18n/ru/docusaurus-plugin-content-docs/current/querying.md",
+  "sourceDirName": ".",
+  "slug": "/querying",
+  "permalink": "/weaver/ru/docs/querying",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/weaver-orm/weaver/tree/main/website/docs/querying.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "querying",
+    "title": "Построитель Запросов"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Репозитории",
+    "permalink": "/weaver/ru/docs/repositories"
+  },
+  "next": {
+    "title": "Хуки Жизненного Цикла",
+    "permalink": "/weaver/ru/docs/lifecycle"
+  }
+}

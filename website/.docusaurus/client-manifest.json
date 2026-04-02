@@ -1,0 +1,487 @@
+{
+  "entrypoints": [
+    "main"
+  ],
+  "origins": {
+    "42": [
+      42
+    ],
+    "17896441": [
+      869,
+      401
+    ],
+    "main": [
+      354,
+      869,
+      792
+    ],
+    "runtime~main": [
+      792,
+      869,
+      354
+    ],
+    "180919b9": [
+      384
+    ],
+    "2b4bf02e": [
+      344
+    ],
+    "3f569d0f": [
+      992
+    ],
+    "505b4b8d": [
+      703
+    ],
+    "5469660e": [
+      90
+    ],
+    "5ab6d4e8": [
+      38
+    ],
+    "5bfc32c8": [
+      301
+    ],
+    "5e95c892": [
+      647
+    ],
+    "612bed4a": [
+      610
+    ],
+    "6a43dac0": [
+      495
+    ],
+    "6ffac2e7": [
+      499
+    ],
+    "891bcf8f": [
+      550
+    ],
+    "93b6c16c": [
+      954
+    ],
+    "a6ca96de": [
+      134
+    ],
+    "a7456010": [
+      235
+    ],
+    "a7bd4aaa": [
+      98
+    ],
+    "a94703ab": [
+      869,
+      48
+    ],
+    "aba21aa0": [
+      742
+    ],
+    "ad1e54ef": [
+      52
+    ],
+    "adff2d8e": [
+      531
+    ],
+    "ae027dfe": [
+      881
+    ],
+    "b5ef47db": [
+      756
+    ],
+    "b6afc0a2": [
+      674
+    ],
+    "c4f5d8e4": [
+      634
+    ],
+    "c74d81e1": [
+      330
+    ],
+    "cc47bf91": [
+      156
+    ],
+    "cfeb3b7c": [
+      24
+    ],
+    "d0d4c1bd": [
+      977
+    ],
+    "e0e848c9": [
+      447
+    ],
+    "e1b3dfe2": [
+      403
+    ],
+    "e335c0c3": [
+      272
+    ],
+    "e65627f9": [
+      517
+    ],
+    "f3eec2f1": [
+      576
+    ],
+    "fd7214c4": [
+      108
+    ],
+    "styles": [
+      48,
+      354,
+      401,
+      792,
+      869
+    ]
+  },
+  "assets": {
+    "24": {
+      "js": [
+        {
+          "file": "assets/js/cfeb3b7c.7b9f986c.js",
+          "hash": "915ab6e6d0e9f70b",
+          "publicPath": "/weaver/de/assets/js/cfeb3b7c.7b9f986c.js"
+        }
+      ]
+    },
+    "38": {
+      "js": [
+        {
+          "file": "assets/js/5ab6d4e8.7b76ba12.js",
+          "hash": "3c29511cbf51b7af",
+          "publicPath": "/weaver/de/assets/js/5ab6d4e8.7b76ba12.js"
+        }
+      ]
+    },
+    "42": {
+      "js": [
+        {
+          "file": "assets/js/42.9dc8a10a.js",
+          "hash": "bd25e76682f34965",
+          "publicPath": "/weaver/de/assets/js/42.9dc8a10a.js"
+        }
+      ]
+    },
+    "48": {
+      "js": [
+        {
+          "file": "assets/js/a94703ab.e3df88e3.js",
+          "hash": "63cb855272b3a2d5",
+          "publicPath": "/weaver/de/assets/js/a94703ab.e3df88e3.js"
+        }
+      ]
+    },
+    "52": {
+      "js": [
+        {
+          "file": "assets/js/ad1e54ef.b187ff8d.js",
+          "hash": "bba340bc760f230d",
+          "publicPath": "/weaver/de/assets/js/ad1e54ef.b187ff8d.js"
+        }
+      ]
+    },
+    "90": {
+      "js": [
+        {
+          "file": "assets/js/5469660e.e3ddd2ec.js",
+          "hash": "a1b7f21f8064e824",
+          "publicPath": "/weaver/de/assets/js/5469660e.e3ddd2ec.js"
+        }
+      ]
+    },
+    "98": {
+      "js": [
+        {
+          "file": "assets/js/a7bd4aaa.b1d90172.js",
+          "hash": "867b2d20e15defce",
+          "publicPath": "/weaver/de/assets/js/a7bd4aaa.b1d90172.js"
+        }
+      ]
+    },
+    "108": {
+      "js": [
+        {
+          "file": "assets/js/fd7214c4.3dfdd6db.js",
+          "hash": "fff7f7e1c5584d42",
+          "publicPath": "/weaver/de/assets/js/fd7214c4.3dfdd6db.js"
+        }
+      ]
+    },
+    "134": {
+      "js": [
+        {
+          "file": "assets/js/a6ca96de.3e8cc57c.js",
+          "hash": "2ba5278c4fbbf65c",
+          "publicPath": "/weaver/de/assets/js/a6ca96de.3e8cc57c.js"
+        }
+      ]
+    },
+    "156": {
+      "js": [
+        {
+          "file": "assets/js/cc47bf91.8e336ce9.js",
+          "hash": "b8db63f1811ea9cb",
+          "publicPath": "/weaver/de/assets/js/cc47bf91.8e336ce9.js"
+        }
+      ]
+    },
+    "235": {
+      "js": [
+        {
+          "file": "assets/js/a7456010.1049a9cb.js",
+          "hash": "e91bd5c3dbcb277b",
+          "publicPath": "/weaver/de/assets/js/a7456010.1049a9cb.js"
+        }
+      ]
+    },
+    "272": {
+      "js": [
+        {
+          "file": "assets/js/e335c0c3.4b1cd975.js",
+          "hash": "535228db5f8daea9",
+          "publicPath": "/weaver/de/assets/js/e335c0c3.4b1cd975.js"
+        }
+      ]
+    },
+    "301": {
+      "js": [
+        {
+          "file": "assets/js/5bfc32c8.5718a460.js",
+          "hash": "3dd5c87a03834f32",
+          "publicPath": "/weaver/de/assets/js/5bfc32c8.5718a460.js"
+        }
+      ]
+    },
+    "330": {
+      "js": [
+        {
+          "file": "assets/js/c74d81e1.60893081.js",
+          "hash": "ff31dd200ca09a8c",
+          "publicPath": "/weaver/de/assets/js/c74d81e1.60893081.js"
+        }
+      ]
+    },
+    "344": {
+      "js": [
+        {
+          "file": "assets/js/2b4bf02e.217ac22a.js",
+          "hash": "2db8af387d735e74",
+          "publicPath": "/weaver/de/assets/js/2b4bf02e.217ac22a.js"
+        }
+      ]
+    },
+    "354": {
+      "js": [
+        {
+          "file": "assets/js/runtime~main.86e6f254.js",
+          "hash": "e1b4f4770860bf5a",
+          "publicPath": "/weaver/de/assets/js/runtime~main.86e6f254.js"
+        }
+      ]
+    },
+    "384": {
+      "js": [
+        {
+          "file": "assets/js/180919b9.f4bd03e8.js",
+          "hash": "a52890974d011830",
+          "publicPath": "/weaver/de/assets/js/180919b9.f4bd03e8.js"
+        }
+      ]
+    },
+    "401": {
+      "js": [
+        {
+          "file": "assets/js/17896441.60a086d7.js",
+          "hash": "602b4b357478dcf0",
+          "publicPath": "/weaver/de/assets/js/17896441.60a086d7.js"
+        }
+      ]
+    },
+    "403": {
+      "js": [
+        {
+          "file": "assets/js/e1b3dfe2.b334ee10.js",
+          "hash": "808ebcf650783ab6",
+          "publicPath": "/weaver/de/assets/js/e1b3dfe2.b334ee10.js"
+        }
+      ]
+    },
+    "447": {
+      "js": [
+        {
+          "file": "assets/js/e0e848c9.51b96114.js",
+          "hash": "2f06a19b5230c490",
+          "publicPath": "/weaver/de/assets/js/e0e848c9.51b96114.js"
+        }
+      ]
+    },
+    "495": {
+      "js": [
+        {
+          "file": "assets/js/6a43dac0.e74e7484.js",
+          "hash": "8669caf869280028",
+          "publicPath": "/weaver/de/assets/js/6a43dac0.e74e7484.js"
+        }
+      ]
+    },
+    "499": {
+      "js": [
+        {
+          "file": "assets/js/6ffac2e7.e7999319.js",
+          "hash": "52ec3fb131e38fca",
+          "publicPath": "/weaver/de/assets/js/6ffac2e7.e7999319.js"
+        }
+      ]
+    },
+    "517": {
+      "js": [
+        {
+          "file": "assets/js/e65627f9.6b44ccdd.js",
+          "hash": "fc788c0167d695fc",
+          "publicPath": "/weaver/de/assets/js/e65627f9.6b44ccdd.js"
+        }
+      ]
+    },
+    "531": {
+      "js": [
+        {
+          "file": "assets/js/adff2d8e.56ac76ba.js",
+          "hash": "1ae09ff2dbcf9783",
+          "publicPath": "/weaver/de/assets/js/adff2d8e.56ac76ba.js"
+        }
+      ]
+    },
+    "550": {
+      "js": [
+        {
+          "file": "assets/js/891bcf8f.d3c000c7.js",
+          "hash": "0ff34a1f09ab8b5e",
+          "publicPath": "/weaver/de/assets/js/891bcf8f.d3c000c7.js"
+        }
+      ]
+    },
+    "576": {
+      "js": [
+        {
+          "file": "assets/js/f3eec2f1.be33f593.js",
+          "hash": "9dd9aedac25774e9",
+          "publicPath": "/weaver/de/assets/js/f3eec2f1.be33f593.js"
+        }
+      ]
+    },
+    "610": {
+      "js": [
+        {
+          "file": "assets/js/612bed4a.1847bc15.js",
+          "hash": "9196f408a396821e",
+          "publicPath": "/weaver/de/assets/js/612bed4a.1847bc15.js"
+        }
+      ]
+    },
+    "634": {
+      "js": [
+        {
+          "file": "assets/js/c4f5d8e4.21a0c7ac.js",
+          "hash": "6891365d35126f4e",
+          "publicPath": "/weaver/de/assets/js/c4f5d8e4.21a0c7ac.js"
+        }
+      ]
+    },
+    "647": {
+      "js": [
+        {
+          "file": "assets/js/5e95c892.c7cd65eb.js",
+          "hash": "1fe429728ff0d8a5",
+          "publicPath": "/weaver/de/assets/js/5e95c892.c7cd65eb.js"
+        }
+      ]
+    },
+    "674": {
+      "js": [
+        {
+          "file": "assets/js/b6afc0a2.5a6054e8.js",
+          "hash": "9f538c255fbbeed7",
+          "publicPath": "/weaver/de/assets/js/b6afc0a2.5a6054e8.js"
+        }
+      ]
+    },
+    "703": {
+      "js": [
+        {
+          "file": "assets/js/505b4b8d.caeae6da.js",
+          "hash": "84b0edbe42108398",
+          "publicPath": "/weaver/de/assets/js/505b4b8d.caeae6da.js"
+        }
+      ]
+    },
+    "742": {
+      "js": [
+        {
+          "file": "assets/js/aba21aa0.59ca32be.js",
+          "hash": "60f0e56c2764eee7",
+          "publicPath": "/weaver/de/assets/js/aba21aa0.59ca32be.js"
+        }
+      ]
+    },
+    "756": {
+      "js": [
+        {
+          "file": "assets/js/b5ef47db.8d476e8a.js",
+          "hash": "ec07d2ee3bece384",
+          "publicPath": "/weaver/de/assets/js/b5ef47db.8d476e8a.js"
+        }
+      ]
+    },
+    "792": {
+      "js": [
+        {
+          "file": "assets/js/main.75b8f448.js",
+          "hash": "1725685bbfee839d",
+          "publicPath": "/weaver/de/assets/js/main.75b8f448.js"
+        }
+      ]
+    },
+    "869": {
+      "css": [
+        {
+          "file": "assets/css/styles.d5a52285.css",
+          "hash": "a65eb40bd21d51d3",
+          "publicPath": "/weaver/de/assets/css/styles.d5a52285.css"
+        }
+      ]
+    },
+    "881": {
+      "js": [
+        {
+          "file": "assets/js/ae027dfe.015b7968.js",
+          "hash": "aead235535867ca1",
+          "publicPath": "/weaver/de/assets/js/ae027dfe.015b7968.js"
+        }
+      ]
+    },
+    "954": {
+      "js": [
+        {
+          "file": "assets/js/93b6c16c.d23eb41d.js",
+          "hash": "0561f07fd4a0eb0f",
+          "publicPath": "/weaver/de/assets/js/93b6c16c.d23eb41d.js"
+        }
+      ]
+    },
+    "977": {
+      "js": [
+        {
+          "file": "assets/js/d0d4c1bd.4e610e75.js",
+          "hash": "a966d0d8a27bf975",
+          "publicPath": "/weaver/de/assets/js/d0d4c1bd.4e610e75.js"
+        }
+      ]
+    },
+    "992": {
+      "js": [
+        {
+          "file": "assets/js/3f569d0f.1e07a659.js",
+          "hash": "27cc9a7aba56ab2b",
+          "publicPath": "/weaver/de/assets/js/3f569d0f.1e07a659.js"
+        }
+      ]
+    }
+  }
+}

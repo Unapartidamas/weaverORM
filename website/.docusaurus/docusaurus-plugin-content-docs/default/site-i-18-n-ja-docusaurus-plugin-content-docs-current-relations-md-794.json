@@ -1,0 +1,27 @@
+{
+  "id": "relations",
+  "title": "リレーション",
+  "description": "Weaver ORM は、RelationMap を介してエンティティのマッパークラス内にすべてのリレーションメタデータを定義します。エンティティプロパティへのアトリビュートはなく、実行時リフレクションもありません。リレーションは常に明示的にロードされます — Weaver は裏でサプライズクエリを発行することはありません。",
+  "source": "@site/i18n/ja/docusaurus-plugin-content-docs/current/relations.md",
+  "sourceDirName": ".",
+  "slug": "/relations",
+  "permalink": "/weaver/ja/docs/relations",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/weaver-orm/weaver/tree/main/website/docs/relations.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "relations",
+    "title": "リレーション"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "エンティティマッピング",
+    "permalink": "/weaver/ja/docs/entity-mapping"
+  },
+  "next": {
+    "title": "埋め込みオブジェクト",
+    "permalink": "/weaver/ja/docs/embeddable"
+  }
+}

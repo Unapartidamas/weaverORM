@@ -1,0 +1,27 @@
+{
+  "id": "repositories",
+  "title": "रिपॉज़िटरी",
+  "description": "Repositories are the primary way to read entities from the database. Every entity has a corresponding repository that encapsulates all query logic for that entity, keeping controllers and services free of raw SQL or query-builder calls.",
+  "source": "@site/i18n/hi/docusaurus-plugin-content-docs/current/repositories.md",
+  "sourceDirName": ".",
+  "slug": "/repositories",
+  "permalink": "/weaver/hi/docs/repositories",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/weaver-orm/weaver/tree/main/website/docs/repositories.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "repositories",
+    "title": "रिपॉज़िटरी"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "EntityWorkspace",
+    "permalink": "/weaver/hi/docs/workspace"
+  },
+  "next": {
+    "title": "क्वेरी बिल्डर",
+    "permalink": "/weaver/hi/docs/querying"
+  }
+}

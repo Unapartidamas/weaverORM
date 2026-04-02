@@ -1,0 +1,27 @@
+{
+  "id": "quick-start",
+  "title": "快速开始",
+  "description": "本指南通过一个完整的工作示例，带你了解：定义 User 实体、编写其映射器，以及使用 EntityWorkspace（实体工作区）执行基本的持久化操作。",
+  "source": "@site/i18n/zh-Hans/docusaurus-plugin-content-docs/current/quick-start.md",
+  "sourceDirName": ".",
+  "slug": "/quick-start",
+  "permalink": "/weaver/zh-Hans/docs/quick-start",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/weaver-orm/weaver/tree/main/website/docs/quick-start.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "quick-start",
+    "title": "快速开始"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "安装",
+    "permalink": "/weaver/zh-Hans/docs/installation"
+  },
+  "next": {
+    "title": "Symfony 配置",
+    "permalink": "/weaver/zh-Hans/docs/configuration"
+  }
+}

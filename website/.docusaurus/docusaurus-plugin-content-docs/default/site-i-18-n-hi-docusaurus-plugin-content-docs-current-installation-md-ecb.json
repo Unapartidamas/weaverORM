@@ -1,0 +1,27 @@
+{
+  "id": "installation",
+  "title": "इंस्टॉलेशन",
+  "description": "आवश्यकताएं",
+  "source": "@site/i18n/hi/docusaurus-plugin-content-docs/current/installation.md",
+  "sourceDirName": ".",
+  "slug": "/installation",
+  "permalink": "/weaver/hi/docs/installation",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/weaver-orm/weaver/tree/main/website/docs/installation.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "installation",
+    "title": "इंस्टॉलेशन"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "परिचय",
+    "permalink": "/weaver/hi/docs/"
+  },
+  "next": {
+    "title": "त्वरित प्रारंभ",
+    "permalink": "/weaver/hi/docs/quick-start"
+  }
+}

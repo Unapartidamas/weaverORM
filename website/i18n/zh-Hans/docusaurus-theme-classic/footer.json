@@ -1,0 +1,23 @@
+{
+  "link.title.Docs": {
+    "message": "文档"
+  },
+  "link.title.Community": {
+    "message": "社区"
+  },
+  "link.title.More": {
+    "message": "更多"
+  },
+  "link.item.label.Introduction": {
+    "message": "简介"
+  },
+  "link.item.label.Quick Start": {
+    "message": "快速开始"
+  },
+  "link.item.label.GitHub": {
+    "message": "GitHub"
+  },
+  "copyright": {
+    "message": "版权所有 © Weaver ORM。使用 Docusaurus 构建。"
+  }
+}

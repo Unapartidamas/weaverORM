@@ -1,0 +1,27 @@
+{
+  "id": "quick-start",
+  "title": "त्वरित प्रारंभ",
+  "description": "यह गाइड एक पूर्ण कार्यशील उदाहरण के माध्यम से चलता है: एक User एंटिटी परिभाषित करना, उसका मैपर लिखना, और EntityWorkspace का उपयोग करके बुनियादी persistence ऑपरेशन करना।",
+  "source": "@site/i18n/hi/docusaurus-plugin-content-docs/current/quick-start.md",
+  "sourceDirName": ".",
+  "slug": "/quick-start",
+  "permalink": "/weaver/hi/docs/quick-start",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/weaver-orm/weaver/tree/main/website/docs/quick-start.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "quick-start",
+    "title": "त्वरित प्रारंभ"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "इंस्टॉलेशन",
+    "permalink": "/weaver/hi/docs/installation"
+  },
+  "next": {
+    "title": "Symfony कॉन्फ़िगरेशन",
+    "permalink": "/weaver/hi/docs/configuration"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "testing",
+  "title": "Testen",
+  "description": "Weaver ORM provides a dedicated testing toolkit that makes it straightforward to write fast, reliable tests for code that interacts with the database.",
+  "source": "@site/i18n/de/docusaurus-plugin-content-docs/current/testing.md",
+  "sourceDirName": ".",
+  "slug": "/testing",
+  "permalink": "/weaver/de/docs/testing",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/weaver-orm/weaver/tree/main/website/docs/testing.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "testing",
+    "title": "Testen"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Paginierung",
+    "permalink": "/weaver/de/docs/pagination"
+  },
+  "next": {
+    "title": "Migration von Doctrine",
+    "permalink": "/weaver/de/docs/doctrine-bridge"
+  }
+}

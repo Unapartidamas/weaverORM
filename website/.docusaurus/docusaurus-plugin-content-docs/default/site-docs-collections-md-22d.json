@@ -1,0 +1,27 @@
+{
+  "id": "collections",
+  "title": "Entity Collections",
+  "description": "Weaver\\ORM\\Collection\\EntityCollection is a typed, immutable-by-default collection returned by repositories and query builders. Every method that would mutate the collection returns a new EntityCollection instance, so the original is never modified. This makes collections safe to pass around without defensive copying.",
+  "source": "@site/docs/collections.md",
+  "sourceDirName": ".",
+  "slug": "/collections",
+  "permalink": "/weaver/docs/collections",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/weaver-orm/weaver/tree/main/website/docs/collections.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "collections",
+    "title": "Entity Collections"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Schema & Migrations",
+    "permalink": "/weaver/docs/schema-migrations"
+  },
+  "next": {
+    "title": "Pagination",
+    "permalink": "/weaver/docs/pagination"
+  }
+}

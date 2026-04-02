@@ -1,0 +1,25 @@
+{
+  "id": "intro",
+  "title": "¿Qué es Weaver ORM?",
+  "description": "Weaver ORM es un mapeador objeto-relacional para PHP 8.4+ en aplicaciones Symfony construido sobre una premisa única: tus objetos de dominio no deben tener ningún conocimiento de la base de datos. Sin anotaciones en las clases de entidad, sin generación de proxies, sin reflexión en tiempo de ejecución — solo objetos PHP simples y clases mapper explícitas que traducen entre ellos y SQL.",
+  "source": "@site/i18n/es/docusaurus-plugin-content-docs/current/intro.md",
+  "sourceDirName": ".",
+  "slug": "/",
+  "permalink": "/weaver/es/docs/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/weaver-orm/weaver/tree/main/website/docs/intro.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "intro",
+    "title": "¿Qué es Weaver ORM?",
+    "sidebar_label": "Introducción",
+    "slug": "/"
+  },
+  "sidebar": "tutorialSidebar",
+  "next": {
+    "title": "Instalación",
+    "permalink": "/weaver/es/docs/installation"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "concerns",
+  "title": "Concerns et traits",
+  "description": "Weaver ORM fournit des concerns intégrés — des traits PHP qui ajoutent des comportements courants (timestamps, suppressions douces, génération UUID) aux entités et à leurs mappers. Ils suivent la même philosophie de mapping explicite : chaque concern contribue à la fois la logique PHP côté entité et les définitions de colonnes côté mapper.",
+  "source": "@site/i18n/fr/docusaurus-plugin-content-docs/current/concerns.md",
+  "sourceDirName": ".",
+  "slug": "/concerns",
+  "permalink": "/weaver/fr/docs/concerns",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/weaver-orm/weaver/tree/main/website/docs/concerns.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "concerns",
+    "title": "Concerns et traits"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Mapping d'héritage",
+    "permalink": "/weaver/fr/docs/inheritance"
+  },
+  "next": {
+    "title": "EntityWorkspace",
+    "permalink": "/weaver/fr/docs/workspace"
+  }
+}

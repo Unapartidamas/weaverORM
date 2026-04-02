@@ -1,0 +1,163 @@
+{
+  "docusaurus-plugin-content-docs": {
+    "default": {
+      "path": "/weaver/de/docs",
+      "versions": [
+        {
+          "name": "current",
+          "label": "Next",
+          "isLast": true,
+          "path": "/weaver/de/docs",
+          "mainDocId": "intro",
+          "docs": [
+            {
+              "id": "collections",
+              "path": "/weaver/de/docs/collections",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "concerns",
+              "path": "/weaver/de/docs/concerns",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "configuration",
+              "path": "/weaver/de/docs/configuration",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "doctrine-bridge",
+              "path": "/weaver/de/docs/doctrine-bridge",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "embeddable",
+              "path": "/weaver/de/docs/embeddable",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "entity-mapping",
+              "path": "/weaver/de/docs/entity-mapping",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "inheritance",
+              "path": "/weaver/de/docs/inheritance",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "installation",
+              "path": "/weaver/de/docs/installation",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "intro",
+              "path": "/weaver/de/docs/",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "lifecycle",
+              "path": "/weaver/de/docs/lifecycle",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "mongodb",
+              "path": "/weaver/de/docs/mongodb",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "pagination",
+              "path": "/weaver/de/docs/pagination",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "querying",
+              "path": "/weaver/de/docs/querying",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "quick-start",
+              "path": "/weaver/de/docs/quick-start",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "relations",
+              "path": "/weaver/de/docs/relations",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "repositories",
+              "path": "/weaver/de/docs/repositories",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "schema-migrations",
+              "path": "/weaver/de/docs/schema-migrations",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "testing",
+              "path": "/weaver/de/docs/testing",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "transactions",
+              "path": "/weaver/de/docs/transactions",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "valkarnsql/approximate",
+              "path": "/weaver/de/docs/valkarnsql/approximate",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "valkarnsql/branches",
+              "path": "/weaver/de/docs/valkarnsql/branches",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "valkarnsql/cdc",
+              "path": "/weaver/de/docs/valkarnsql/cdc",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "valkarnsql/overview",
+              "path": "/weaver/de/docs/valkarnsql/overview",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "valkarnsql/time-travel",
+              "path": "/weaver/de/docs/valkarnsql/time-travel",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "valkarnsql/vectors",
+              "path": "/weaver/de/docs/valkarnsql/vectors",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "valkarnsql/wasm-udfs",
+              "path": "/weaver/de/docs/valkarnsql/wasm-udfs",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "workspace",
+              "path": "/weaver/de/docs/workspace",
+              "sidebar": "tutorialSidebar"
+            }
+          ],
+          "draftIds": [],
+          "sidebars": {
+            "tutorialSidebar": {
+              "link": {
+                "path": "/weaver/de/docs/",
+                "label": "intro"
+              }
+            }
+          }
+        }
+      ],
+      "breadcrumbs": true
+    }
+  }
+}

@@ -1,0 +1,37 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: weaver_bench
+      POSTGRES_USER: weaver
+      POSTGRES_PASSWORD: weaver
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg_socket:/var/run/postgresql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U weaver -d weaver_bench"]
+      interval: 2s
+      timeout: 5s
+      retries: 15
+
+  bench:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      DB_DRIVER: pdo_pgsql
+      DB_HOST: /var/run/postgresql
+      DB_PORT: 5432
+      DB_NAME: weaver_bench
+      DB_USER: weaver
+      DB_PASSWORD: weaver
+    volumes:
+      - pg_socket:/var/run/postgresql
+    command: ["php", "benchmark/run-pg.php"]
+
+volumes:
+  pg_socket:

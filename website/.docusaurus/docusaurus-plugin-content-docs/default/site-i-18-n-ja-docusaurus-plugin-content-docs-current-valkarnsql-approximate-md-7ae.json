@@ -1,0 +1,28 @@
+{
+  "id": "valkarnsql/approximate",
+  "title": "近似クエリ",
+  "description": "Approximate Query Processing (AQP) lets ValkarnSQL answer aggregate questions — COUNT, SUM, AVG — by scanning a statistical sample of the data instead of reading every row. The result is returned in milliseconds even on tables with billions of rows, at the cost of a small, bounded error margin.",
+  "source": "@site/i18n/ja/docusaurus-plugin-content-docs/current/valkarnsql/approximate.md",
+  "sourceDirName": "valkarnsql",
+  "slug": "/valkarnsql/approximate",
+  "permalink": "/weaver/ja/docs/valkarnsql/approximate",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/weaver-orm/weaver/tree/main/website/docs/valkarnsql/approximate.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "approximate",
+    "title": "近似クエリ",
+    "sidebar_label": "Approximate Queries"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "CDC",
+    "permalink": "/weaver/ja/docs/valkarnsql/cdc"
+  },
+  "next": {
+    "title": "Vector Search",
+    "permalink": "/weaver/ja/docs/valkarnsql/vectors"
+  }
+}

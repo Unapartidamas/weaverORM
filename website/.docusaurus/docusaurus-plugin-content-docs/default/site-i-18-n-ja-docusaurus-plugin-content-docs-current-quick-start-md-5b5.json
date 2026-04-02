@@ -1,0 +1,27 @@
+{
+  "id": "quick-start",
+  "title": "クイックスタート",
+  "description": "このガイドでは、User エンティティの定義、マッパーの作成、EntityWorkspace を使った基本的な永続化操作という完全な実例を順を追って説明します。",
+  "source": "@site/i18n/ja/docusaurus-plugin-content-docs/current/quick-start.md",
+  "sourceDirName": ".",
+  "slug": "/quick-start",
+  "permalink": "/weaver/ja/docs/quick-start",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/weaver-orm/weaver/tree/main/website/docs/quick-start.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "quick-start",
+    "title": "クイックスタート"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "インストール",
+    "permalink": "/weaver/ja/docs/installation"
+  },
+  "next": {
+    "title": "Symfony 設定",
+    "permalink": "/weaver/ja/docs/configuration"
+  }
+}

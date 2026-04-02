@@ -1,0 +1,27 @@
+{
+  "id": "relations",
+  "title": "रिलेशन्स",
+  "description": "Weaver ORM एक RelationMap के माध्यम से एंटिटी के मैपर क्लास के अंदर सभी रिलेशन मेटाडेटा परिभाषित करता है। एंटिटी प्रॉपर्टीज़ पर कोई एट्रिब्यूट नहीं हैं और कोई रनटाइम रिफ्लेक्शन नहीं है। रिलेशन्स हमेशा स्पष्ट रूप से लोड किए जाते हैं — Weaver आपकी पीठ के पीछे कभी surprise क्वेरीज़ नहीं जारी करता।",
+  "source": "@site/i18n/hi/docusaurus-plugin-content-docs/current/relations.md",
+  "sourceDirName": ".",
+  "slug": "/relations",
+  "permalink": "/weaver/hi/docs/relations",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/weaver-orm/weaver/tree/main/website/docs/relations.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "relations",
+    "title": "रिलेशन्स"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "एंटिटी मैपिंग",
+    "permalink": "/weaver/hi/docs/entity-mapping"
+  },
+  "next": {
+    "title": "Embeddable ऑब्जेक्ट्स",
+    "permalink": "/weaver/hi/docs/embeddable"
+  }
+}

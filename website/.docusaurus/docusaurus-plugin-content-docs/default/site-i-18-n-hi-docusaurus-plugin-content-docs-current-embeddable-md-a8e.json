@@ -1,0 +1,27 @@
+{
+  "id": "embeddable",
+  "title": "Embeddable ऑब्जेक्ट्स",
+  "description": "एक embeddable (DDD terminology में value object भी कहलाता है) एक PHP क्लास है जिसकी properties parent एंटिटी की टेबल में कॉलम के रूप में स्टोर की जाती हैं — कोई join नहीं, कोई अलग टेबल नहीं। Weaver एक समर्पित AbstractEmbeddableMapper के माध्यम से कॉलम मैपिंग और prefix लॉजिक प्रबंधित करता है।",
+  "source": "@site/i18n/hi/docusaurus-plugin-content-docs/current/embeddable.md",
+  "sourceDirName": ".",
+  "slug": "/embeddable",
+  "permalink": "/weaver/hi/docs/embeddable",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/weaver-orm/weaver/tree/main/website/docs/embeddable.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "embeddable",
+    "title": "Embeddable ऑब्जेक्ट्स"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "रिलेशन्स",
+    "permalink": "/weaver/hi/docs/relations"
+  },
+  "next": {
+    "title": "इनहेरिटेंस मैपिंग",
+    "permalink": "/weaver/hi/docs/inheritance"
+  }
+}

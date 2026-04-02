@@ -1,0 +1,25 @@
+{
+  "id": "intro",
+  "title": "Weaver ORM とは？",
+  "description": "Weaver ORM は、Symfony アプリケーション向けの PHP 8.4 以上対応のオブジェクト関係マッパー（ORM）です。単一の原則に基づいて構築されています：ドメインオブジェクトはデータベースについて一切知識を持つべきではない。エンティティクラスへのアノテーション不要、プロキシ生成不要、実行時リフレクション不要 — 純粋な PHP オブジェクトと、それらを SQL に変換する明示的なマッパークラスだけで構成されています。",
+  "source": "@site/i18n/ja/docusaurus-plugin-content-docs/current/intro.md",
+  "sourceDirName": ".",
+  "slug": "/",
+  "permalink": "/weaver/ja/docs/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/weaver-orm/weaver/tree/main/website/docs/intro.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "intro",
+    "title": "Weaver ORM とは？",
+    "sidebar_label": "はじめに",
+    "slug": "/"
+  },
+  "sidebar": "tutorialSidebar",
+  "next": {
+    "title": "インストール",
+    "permalink": "/weaver/ja/docs/installation"
+  }
+}

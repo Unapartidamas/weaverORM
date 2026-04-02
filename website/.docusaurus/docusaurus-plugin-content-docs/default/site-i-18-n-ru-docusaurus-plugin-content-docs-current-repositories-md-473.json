@@ -1,0 +1,27 @@
+{
+  "id": "repositories",
+  "title": "Репозитории",
+  "description": "Repositories are the primary way to read entities from the database. Every entity has a corresponding repository that encapsulates all query logic for that entity, keeping controllers and services free of raw SQL or query-builder calls.",
+  "source": "@site/i18n/ru/docusaurus-plugin-content-docs/current/repositories.md",
+  "sourceDirName": ".",
+  "slug": "/repositories",
+  "permalink": "/weaver/ru/docs/repositories",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/weaver-orm/weaver/tree/main/website/docs/repositories.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "repositories",
+    "title": "Репозитории"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "EntityWorkspace",
+    "permalink": "/weaver/ru/docs/workspace"
+  },
+  "next": {
+    "title": "Построитель Запросов",
+    "permalink": "/weaver/ru/docs/querying"
+  }
+}

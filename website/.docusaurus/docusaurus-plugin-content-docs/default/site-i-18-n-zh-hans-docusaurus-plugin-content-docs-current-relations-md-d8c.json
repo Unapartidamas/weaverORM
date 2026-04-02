@@ -1,0 +1,27 @@
+{
+  "id": "relations",
+  "title": "关联关系",
+  "description": "Weaver ORM 通过 RelationMap 在实体的映射器类中定义所有关联元数据。实体属性上没有任何注解，也没有运行时反射。关联关系始终显式加载——Weaver 从不在背后偷偷发出查询。",
+  "source": "@site/i18n/zh-Hans/docusaurus-plugin-content-docs/current/relations.md",
+  "sourceDirName": ".",
+  "slug": "/relations",
+  "permalink": "/weaver/zh-Hans/docs/relations",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/weaver-orm/weaver/tree/main/website/docs/relations.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "relations",
+    "title": "关联关系"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "实体映射",
+    "permalink": "/weaver/zh-Hans/docs/entity-mapping"
+  },
+  "next": {
+    "title": "嵌入对象",
+    "permalink": "/weaver/zh-Hans/docs/embeddable"
+  }
+}

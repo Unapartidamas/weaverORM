@@ -1,0 +1,10 @@
+/vendor/
+/node_modules/
+/website/node_modules/
+/website/build/
+/website/.docusaurus/
+.phpunit.result.cache
+.phpunit.cache/
+*.cache
+.env
+.env.local

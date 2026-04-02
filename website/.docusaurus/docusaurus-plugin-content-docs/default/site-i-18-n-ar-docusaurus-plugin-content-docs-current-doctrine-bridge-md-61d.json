@@ -1,0 +1,27 @@
+{
+  "id": "doctrine-bridge",
+  "title": "الترحيل من Doctrine",
+  "description": "Weaver ORM ships a compatibility bridge that lets you migrate an existing Doctrine ORM codebase incrementally. The bridge exposes the familiar Doctrine EntityManager API as a thin, deprecated wrapper over the Weaver internals so that existing code continues to compile and run while you migrate file by file.",
+  "source": "@site/i18n/ar/docusaurus-plugin-content-docs/current/doctrine-bridge.md",
+  "sourceDirName": ".",
+  "slug": "/doctrine-bridge",
+  "permalink": "/weaver/ar/docs/doctrine-bridge",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/weaver-orm/weaver/tree/main/website/docs/doctrine-bridge.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "doctrine-bridge",
+    "title": "الترحيل من Doctrine"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "الاختبار",
+    "permalink": "/weaver/ar/docs/testing"
+  },
+  "next": {
+    "title": "دعم MongoDB",
+    "permalink": "/weaver/ar/docs/mongodb"
+  }
+}

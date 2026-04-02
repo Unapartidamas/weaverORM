@@ -1,0 +1,23 @@
+{
+  "link.title.Docs": {
+    "message": "ドキュメント"
+  },
+  "link.title.Community": {
+    "message": "コミュニティ"
+  },
+  "link.title.More": {
+    "message": "その他"
+  },
+  "link.item.label.Introduction": {
+    "message": "はじめに"
+  },
+  "link.item.label.Quick Start": {
+    "message": "クイックスタート"
+  },
+  "link.item.label.GitHub": {
+    "message": "GitHub"
+  },
+  "copyright": {
+    "message": "Copyright © Weaver ORM. Docusaurus で構築。"
+  }
+}

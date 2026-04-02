@@ -1,0 +1,27 @@
+{
+  "id": "inheritance",
+  "title": "Mapping d'héritage",
+  "description": "Weaver ORM supporte trois schémas d'héritage. Choisissez en fonction de la similarité des schémas de vos sous-classes et de la fréquence à laquelle vous avez besoin d'interroger tous les types dans un seul SELECT.",
+  "source": "@site/i18n/fr/docusaurus-plugin-content-docs/current/inheritance.md",
+  "sourceDirName": ".",
+  "slug": "/inheritance",
+  "permalink": "/weaver/fr/docs/inheritance",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/weaver-orm/weaver/tree/main/website/docs/inheritance.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "inheritance",
+    "title": "Mapping d'héritage"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Objets intégrables",
+    "permalink": "/weaver/fr/docs/embeddable"
+  },
+  "next": {
+    "title": "Concerns et traits",
+    "permalink": "/weaver/fr/docs/concerns"
+  }
+}

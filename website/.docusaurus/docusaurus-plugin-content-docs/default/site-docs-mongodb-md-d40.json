@@ -1,0 +1,27 @@
+{
+  "id": "mongodb",
+  "title": "MongoDB Support",
+  "description": "Weaver ORM includes first-class support for MongoDB through a document-oriented abstraction layer. The API mirrors the relational ORM closely, so switching between SQL and MongoDB entities requires minimal mental overhead.",
+  "source": "@site/docs/mongodb.md",
+  "sourceDirName": ".",
+  "slug": "/mongodb",
+  "permalink": "/weaver/docs/mongodb",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/weaver-orm/weaver/tree/main/website/docs/mongodb.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "mongodb",
+    "title": "MongoDB Support"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Migrating from Doctrine",
+    "permalink": "/weaver/docs/doctrine-bridge"
+  },
+  "next": {
+    "title": "Overview",
+    "permalink": "/weaver/docs/valkarnsql/overview"
+  }
+}

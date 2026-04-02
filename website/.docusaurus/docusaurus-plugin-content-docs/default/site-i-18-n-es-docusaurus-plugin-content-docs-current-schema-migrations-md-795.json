@@ -1,0 +1,27 @@
+{
+  "id": "schema-migrations",
+  "title": "Schema y Migraciones",
+  "description": "Weaver ORM generates SQL DDL directly from your mapper classes. The SchemaGenerator reads every registered mapper, converts it into a Doctrine DBAL Schema object, and can create, update, or drop your database schema through a set of Symfony console commands.",
+  "source": "@site/i18n/es/docusaurus-plugin-content-docs/current/schema-migrations.md",
+  "sourceDirName": ".",
+  "slug": "/schema-migrations",
+  "permalink": "/weaver/es/docs/schema-migrations",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/weaver-orm/weaver/tree/main/website/docs/schema-migrations.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "schema-migrations",
+    "title": "Schema y Migraciones"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Transacciones",
+    "permalink": "/weaver/es/docs/transactions"
+  },
+  "next": {
+    "title": "Colecciones de Entidades",
+    "permalink": "/weaver/es/docs/collections"
+  }
+}

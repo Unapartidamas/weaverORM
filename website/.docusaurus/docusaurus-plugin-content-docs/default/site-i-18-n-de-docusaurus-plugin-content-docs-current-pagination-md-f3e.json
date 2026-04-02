@@ -1,0 +1,27 @@
+{
+  "id": "pagination",
+  "title": "Paginierung",
+  "description": "Weaver ORM provides three paginator types for different use cases: Page (standard offset pagination), SimplePage (lightweight, no total count), and CursorPage (cursor-based, ideal for infinite scroll and large datasets).",
+  "source": "@site/i18n/de/docusaurus-plugin-content-docs/current/pagination.md",
+  "sourceDirName": ".",
+  "slug": "/pagination",
+  "permalink": "/weaver/de/docs/pagination",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/weaver-orm/weaver/tree/main/website/docs/pagination.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "pagination",
+    "title": "Paginierung"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Entity-Collections",
+    "permalink": "/weaver/de/docs/collections"
+  },
+  "next": {
+    "title": "Testen",
+    "permalink": "/weaver/de/docs/testing"
+  }
+}

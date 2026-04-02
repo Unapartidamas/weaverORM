@@ -1,0 +1,27 @@
+{
+  "id": "quick-start",
+  "title": "Inicio Rápido",
+  "description": "Esta guía muestra un ejemplo completo y funcional: definir una entidad User, escribir su mapper y realizar operaciones básicas de persistencia usando EntityWorkspace.",
+  "source": "@site/i18n/es/docusaurus-plugin-content-docs/current/quick-start.md",
+  "sourceDirName": ".",
+  "slug": "/quick-start",
+  "permalink": "/weaver/es/docs/quick-start",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/weaver-orm/weaver/tree/main/website/docs/quick-start.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "quick-start",
+    "title": "Inicio Rápido"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Instalación",
+    "permalink": "/weaver/es/docs/installation"
+  },
+  "next": {
+    "title": "Configuración de Symfony",
+    "permalink": "/weaver/es/docs/configuration"
+  }
+}

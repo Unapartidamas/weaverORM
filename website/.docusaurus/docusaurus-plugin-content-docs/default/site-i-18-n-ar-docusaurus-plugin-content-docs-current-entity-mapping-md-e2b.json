@@ -1,0 +1,27 @@
+{
+  "id": "entity-mapping",
+  "title": "تعيين الكيانات",
+  "description": "يفصل Weaver ORM كائنات النطاق عن بيانات وصف الاستمرار بوضع جميع معلومات التعيين في صف مُعيِّن مخصص. تغطي هذه الصفحة كل جانب من جوانب إعداد المُعيِّن.",
+  "source": "@site/i18n/ar/docusaurus-plugin-content-docs/current/entity-mapping.md",
+  "sourceDirName": ".",
+  "slug": "/entity-mapping",
+  "permalink": "/weaver/ar/docs/entity-mapping",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/weaver-orm/weaver/tree/main/website/docs/entity-mapping.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "entity-mapping",
+    "title": "تعيين الكيانات"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "إعداد Symfony",
+    "permalink": "/weaver/ar/docs/configuration"
+  },
+  "next": {
+    "title": "العلاقات",
+    "permalink": "/weaver/ar/docs/relations"
+  }
+}

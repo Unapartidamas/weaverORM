@@ -1,0 +1,23 @@
+{
+  "link.title.Docs": {
+    "message": "Dokumentation"
+  },
+  "link.title.Community": {
+    "message": "Community"
+  },
+  "link.title.More": {
+    "message": "Mehr"
+  },
+  "link.item.label.Introduction": {
+    "message": "Einführung"
+  },
+  "link.item.label.Quick Start": {
+    "message": "Schnellstart"
+  },
+  "link.item.label.GitHub": {
+    "message": "GitHub"
+  },
+  "copyright": {
+    "message": "Copyright © Weaver ORM. Erstellt mit Docusaurus."
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "installation",
+  "title": "安装",
+  "description": "系统要求",
+  "source": "@site/i18n/zh-Hans/docusaurus-plugin-content-docs/current/installation.md",
+  "sourceDirName": ".",
+  "slug": "/installation",
+  "permalink": "/weaver/zh-Hans/docs/installation",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/weaver-orm/weaver/tree/main/website/docs/installation.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "installation",
+    "title": "安装"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "简介",
+    "permalink": "/weaver/zh-Hans/docs/"
+  },
+  "next": {
+    "title": "快速开始",
+    "permalink": "/weaver/zh-Hans/docs/quick-start"
+  }
+}

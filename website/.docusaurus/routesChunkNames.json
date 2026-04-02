@@ -1,0 +1,130 @@
+{
+  "/weaver/de/docs-6be": {
+    "__comp": "5e95c892",
+    "__context": {
+      "plugin": "aba21aa0"
+    }
+  },
+  "/weaver/de/docs-798": {
+    "__comp": "a7bd4aaa",
+    "__props": "3f569d0f"
+  },
+  "/weaver/de/docs-533": {
+    "__comp": "a94703ab"
+  },
+  "/weaver/de/docs/-f94": {
+    "__comp": "17896441",
+    "content": "5bfc32c8"
+  },
+  "/weaver/de/docs/collections-bd5": {
+    "__comp": "17896441",
+    "content": "cfeb3b7c"
+  },
+  "/weaver/de/docs/concerns-2ae": {
+    "__comp": "17896441",
+    "content": "e1b3dfe2"
+  },
+  "/weaver/de/docs/configuration-90f": {
+    "__comp": "17896441",
+    "content": "e0e848c9"
+  },
+  "/weaver/de/docs/doctrine-bridge-673": {
+    "__comp": "17896441",
+    "content": "5469660e"
+  },
+  "/weaver/de/docs/embeddable-4ee": {
+    "__comp": "17896441",
+    "content": "a6ca96de"
+  },
+  "/weaver/de/docs/entity-mapping-0dc": {
+    "__comp": "17896441",
+    "content": "505b4b8d"
+  },
+  "/weaver/de/docs/inheritance-4d9": {
+    "__comp": "17896441",
+    "content": "ae027dfe"
+  },
+  "/weaver/de/docs/installation-df3": {
+    "__comp": "17896441",
+    "content": "cc47bf91"
+  },
+  "/weaver/de/docs/lifecycle-750": {
+    "__comp": "17896441",
+    "content": "b6afc0a2"
+  },
+  "/weaver/de/docs/mongodb-c13": {
+    "__comp": "17896441",
+    "content": "891bcf8f"
+  },
+  "/weaver/de/docs/pagination-484": {
+    "__comp": "17896441",
+    "content": "f3eec2f1"
+  },
+  "/weaver/de/docs/querying-6ff": {
+    "__comp": "17896441",
+    "content": "d0d4c1bd"
+  },
+  "/weaver/de/docs/quick-start-6f7": {
+    "__comp": "17896441",
+    "content": "b5ef47db"
+  },
+  "/weaver/de/docs/relations-330": {
+    "__comp": "17896441",
+    "content": "fd7214c4"
+  },
+  "/weaver/de/docs/repositories-e48": {
+    "__comp": "17896441",
+    "content": "c74d81e1"
+  },
+  "/weaver/de/docs/schema-migrations-41a": {
+    "__comp": "17896441",
+    "content": "5ab6d4e8"
+  },
+  "/weaver/de/docs/testing-a7b": {
+    "__comp": "17896441",
+    "content": "e65627f9"
+  },
+  "/weaver/de/docs/transactions-25b": {
+    "__comp": "17896441",
+    "content": "ad1e54ef"
+  },
+  "/weaver/de/docs/valkarnsql/approximate-5df": {
+    "__comp": "17896441",
+    "content": "2b4bf02e"
+  },
+  "/weaver/de/docs/valkarnsql/branches-297": {
+    "__comp": "17896441",
+    "content": "612bed4a"
+  },
+  "/weaver/de/docs/valkarnsql/cdc-56c": {
+    "__comp": "17896441",
+    "content": "93b6c16c"
+  },
+  "/weaver/de/docs/valkarnsql/overview-24d": {
+    "__comp": "17896441",
+    "content": "e335c0c3"
+  },
+  "/weaver/de/docs/valkarnsql/time-travel-798": {
+    "__comp": "17896441",
+    "content": "180919b9"
+  },
+  "/weaver/de/docs/valkarnsql/vectors-8a6": {
+    "__comp": "17896441",
+    "content": "adff2d8e"
+  },
+  "/weaver/de/docs/valkarnsql/wasm-udfs-957": {
+    "__comp": "17896441",
+    "content": "6a43dac0"
+  },
+  "/weaver/de/docs/workspace-c1b": {
+    "__comp": "17896441",
+    "content": "6ffac2e7"
+  },
+  "/weaver/de/-330": {
+    "__comp": "c4f5d8e4",
+    "__context": {
+      "plugin": "a7456010"
+    },
+    "config": "5e9f5e1a"
+  }
+}

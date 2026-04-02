@@ -1,0 +1,25 @@
+{
+  "id": "intro",
+  "title": "ما هو Weaver ORM؟",
+  "description": "Weaver ORM هو نظام ربط كائنات-علائقي (Object-Relational Mapper) لـ PHP 8.4+ مخصص لتطبيقات Symfony، مبني على مبدأ واحد: كائنات النطاق (domain objects) يجب أن تكون خالية تماماً من أي معرفة بقاعدة البيانات. لا توجد تعليقات توضيحية (annotations) على صفوف الكيانات (entity classes)، ولا توليد للوكلاء (proxy generation)، ولا انعكاس في وقت التشغيل (runtime reflection) — فقط كائنات PHP عادية وصفوف مُعيِّن (mapper classes) صريحة تترجم بينها وبين SQL.",
+  "source": "@site/i18n/ar/docusaurus-plugin-content-docs/current/intro.md",
+  "sourceDirName": ".",
+  "slug": "/",
+  "permalink": "/weaver/ar/docs/",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/weaver-orm/weaver/tree/main/website/docs/intro.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "intro",
+    "title": "ما هو Weaver ORM؟",
+    "sidebar_label": "مقدمة",
+    "slug": "/"
+  },
+  "sidebar": "tutorialSidebar",
+  "next": {
+    "title": "التثبيت",
+    "permalink": "/weaver/ar/docs/installation"
+  }
+}

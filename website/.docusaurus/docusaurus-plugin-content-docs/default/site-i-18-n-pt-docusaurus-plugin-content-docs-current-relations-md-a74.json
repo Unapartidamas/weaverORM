@@ -1,0 +1,27 @@
+{
+  "id": "relations",
+  "title": "Relações",
+  "description": "O Weaver ORM define todos os metadados de relação dentro da classe mapper da entidade via um RelationMap. Não há atributos nas propriedades da entidade e nenhuma reflexão em tempo de execução. As relações são sempre carregadas de forma explícita — o Weaver nunca emite consultas surpresa por baixo dos panos.",
+  "source": "@site/i18n/pt/docusaurus-plugin-content-docs/current/relations.md",
+  "sourceDirName": ".",
+  "slug": "/relations",
+  "permalink": "/weaver/pt/docs/relations",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/weaver-orm/weaver/tree/main/website/docs/relations.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "relations",
+    "title": "Relações"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Mapeamento de Entidades",
+    "permalink": "/weaver/pt/docs/entity-mapping"
+  },
+  "next": {
+    "title": "Objetos Embutidos",
+    "permalink": "/weaver/pt/docs/embeddable"
+  }
+}

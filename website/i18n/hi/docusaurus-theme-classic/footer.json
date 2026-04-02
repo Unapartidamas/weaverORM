@@ -1,0 +1,23 @@
+{
+  "link.title.Docs": {
+    "message": "दस्तावेज़"
+  },
+  "link.title.Community": {
+    "message": "समुदाय"
+  },
+  "link.title.More": {
+    "message": "अधिक"
+  },
+  "link.item.label.Introduction": {
+    "message": "परिचय"
+  },
+  "link.item.label.Quick Start": {
+    "message": "त्वरित प्रारंभ"
+  },
+  "link.item.label.GitHub": {
+    "message": "GitHub"
+  },
+  "copyright": {
+    "message": "कॉपीराइट © Weaver ORM। Docusaurus के साथ बनाया गया।"
+  }
+}

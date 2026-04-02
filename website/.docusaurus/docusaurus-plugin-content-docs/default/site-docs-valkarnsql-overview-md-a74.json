@@ -1,0 +1,28 @@
+{
+  "id": "valkarnsql/overview",
+  "title": "ValkarnSQL Overview",
+  "description": "ValkarnSQL is a custom database engine written in Rust. It speaks the PostgreSQL wire protocol version 3 natively, which means every PostgreSQL-compatible library, driver, and tool connects to it without modification — including the PDO pgsql driver that Doctrine DBAL uses under the hood.",
+  "source": "@site/docs/valkarnsql/overview.md",
+  "sourceDirName": "valkarnsql",
+  "slug": "/valkarnsql/overview",
+  "permalink": "/weaver/docs/valkarnsql/overview",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/weaver-orm/weaver/tree/main/website/docs/valkarnsql/overview.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "overview",
+    "title": "ValkarnSQL Overview",
+    "sidebar_label": "Overview"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "MongoDB Support",
+    "permalink": "/weaver/docs/mongodb"
+  },
+  "next": {
+    "title": "Time Travel",
+    "permalink": "/weaver/docs/valkarnsql/time-travel"
+  }
+}

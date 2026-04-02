@@ -1,0 +1,28 @@
+{
+  "id": "valkarnsql/cdc",
+  "title": "Change Data Capture",
+  "description": "Change Data Capture (CDC) is a technique for observing every INSERT, UPDATE, and DELETE that occurs on a database table, in real time, without polling. ValkarnSQL exposes a streaming SUBSCRIBE TO CHANGES ON  SQL command that yields rows as DML operations are committed to the WAL (Write-Ahead Log). Weaver ORM wraps this mechanism in CdcSubscriber and hydrates each row into a typed CdcEvent.",
+  "source": "@site/i18n/de/docusaurus-plugin-content-docs/current/valkarnsql/cdc.md",
+  "sourceDirName": "valkarnsql",
+  "slug": "/valkarnsql/cdc",
+  "permalink": "/weaver/de/docs/valkarnsql/cdc",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/weaver-orm/weaver/tree/main/website/docs/valkarnsql/cdc.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "cdc",
+    "title": "Change Data Capture",
+    "sidebar_label": "CDC"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Branches",
+    "permalink": "/weaver/de/docs/valkarnsql/branches"
+  },
+  "next": {
+    "title": "Approximate Queries",
+    "permalink": "/weaver/de/docs/valkarnsql/approximate"
+  }
+}

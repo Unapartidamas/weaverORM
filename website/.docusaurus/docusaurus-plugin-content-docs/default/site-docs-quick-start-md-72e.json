@@ -1,0 +1,27 @@
+{
+  "id": "quick-start",
+  "title": "Quick Start",
+  "description": "This guide walks through a complete working example: defining a User entity, writing its mapper, and performing basic persistence operations using EntityWorkspace.",
+  "source": "@site/docs/quick-start.md",
+  "sourceDirName": ".",
+  "slug": "/quick-start",
+  "permalink": "/weaver/docs/quick-start",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/weaver-orm/weaver/tree/main/website/docs/quick-start.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "quick-start",
+    "title": "Quick Start"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Installation",
+    "permalink": "/weaver/docs/installation"
+  },
+  "next": {
+    "title": "Symfony Configuration",
+    "permalink": "/weaver/docs/configuration"
+  }
+}

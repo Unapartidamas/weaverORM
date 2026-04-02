@@ -1,0 +1,14 @@
+parameters:
+    level: 9
+    paths:
+        - src
+    excludePaths:
+        - src/Bridge/Symfony
+        - src/MongoDB
+        - src/Repository/CachingRepository.php
+    ignoreErrors:
+        - '#Call to an undefined method Doctrine\\DBAL\\#'
+        - '#does not accept array<int\|string,#'
+        - '#does not accept non-empty-array<int\|string,#'
+        - identifier: missingType.iterableValue
+    treatPhpDocTypesAsCertain: false

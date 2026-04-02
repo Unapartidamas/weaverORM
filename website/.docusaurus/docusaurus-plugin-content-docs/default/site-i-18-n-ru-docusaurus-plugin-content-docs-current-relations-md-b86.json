@@ -1,0 +1,27 @@
+{
+  "id": "relations",
+  "title": "Связи",
+  "description": "Weaver ORM определяет все метаданные связей внутри класса-маппера сущности через RelationMap. На свойствах сущностей нет атрибутов, нет рефлексии во время выполнения. Связи всегда загружаются явно — Weaver никогда не выполняет скрытые запросы за вашей спиной.",
+  "source": "@site/i18n/ru/docusaurus-plugin-content-docs/current/relations.md",
+  "sourceDirName": ".",
+  "slug": "/relations",
+  "permalink": "/weaver/ru/docs/relations",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/weaver-orm/weaver/tree/main/website/docs/relations.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "relations",
+    "title": "Связи"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Маппинг сущностей",
+    "permalink": "/weaver/ru/docs/entity-mapping"
+  },
+  "next": {
+    "title": "Встраиваемые Объекты",
+    "permalink": "/weaver/ru/docs/embeddable"
+  }
+}

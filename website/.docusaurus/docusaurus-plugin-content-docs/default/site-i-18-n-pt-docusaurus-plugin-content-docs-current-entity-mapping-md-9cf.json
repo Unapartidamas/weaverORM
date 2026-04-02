@@ -1,0 +1,27 @@
+{
+  "id": "entity-mapping",
+  "title": "Mapeamento de Entidades",
+  "description": "O Weaver ORM separa os objetos de domínio dos metadados de persistência colocando todas as informações de mapeamento em uma classe mapper dedicada. Esta página cobre todos os aspectos da configuração do mapper.",
+  "source": "@site/i18n/pt/docusaurus-plugin-content-docs/current/entity-mapping.md",
+  "sourceDirName": ".",
+  "slug": "/entity-mapping",
+  "permalink": "/weaver/pt/docs/entity-mapping",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/weaver-orm/weaver/tree/main/website/docs/entity-mapping.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "entity-mapping",
+    "title": "Mapeamento de Entidades"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Configuração do Symfony",
+    "permalink": "/weaver/pt/docs/configuration"
+  },
+  "next": {
+    "title": "Relações",
+    "permalink": "/weaver/pt/docs/relations"
+  }
+}

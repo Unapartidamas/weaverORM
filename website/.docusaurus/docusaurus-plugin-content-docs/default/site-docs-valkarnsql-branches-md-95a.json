@@ -1,0 +1,28 @@
+{
+  "id": "valkarnsql/branches",
+  "title": "Branching",
+  "description": "ValkarnSQL branching works like Git branches, but for data. A branch is a lightweight, copy-on-write snapshot of the entire database. It can be queried and mutated independently of its parent, then either merged back or discarded — without affecting any other branch.",
+  "source": "@site/docs/valkarnsql/branches.md",
+  "sourceDirName": "valkarnsql",
+  "slug": "/valkarnsql/branches",
+  "permalink": "/weaver/docs/valkarnsql/branches",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/weaver-orm/weaver/tree/main/website/docs/valkarnsql/branches.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "branches",
+    "title": "Branching",
+    "sidebar_label": "Branches"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Time Travel",
+    "permalink": "/weaver/docs/valkarnsql/time-travel"
+  },
+  "next": {
+    "title": "CDC",
+    "permalink": "/weaver/docs/valkarnsql/cdc"
+  }
+}

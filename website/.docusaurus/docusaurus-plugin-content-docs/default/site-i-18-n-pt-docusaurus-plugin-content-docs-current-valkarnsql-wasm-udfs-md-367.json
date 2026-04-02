@@ -1,0 +1,24 @@
+{
+  "id": "valkarnsql/wasm-udfs",
+  "title": "WASM UDFs",
+  "description": "ValkarnSQL supports WebAssembly User-Defined Functions (WASM UDFs) — custom SQL functions compiled to the WebAssembly binary format and executed inside the database engine. WASM UDFs run in a sandboxed, deterministic environment with near-native performance and no external network access. Once registered, they are callable from any SQL statement.",
+  "source": "@site/i18n/pt/docusaurus-plugin-content-docs/current/valkarnsql/wasm-udfs.md",
+  "sourceDirName": "valkarnsql",
+  "slug": "/valkarnsql/wasm-udfs",
+  "permalink": "/weaver/pt/docs/valkarnsql/wasm-udfs",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/weaver-orm/weaver/tree/main/website/docs/valkarnsql/wasm-udfs.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "wasm-udfs",
+    "title": "WASM UDFs",
+    "sidebar_label": "WASM UDFs"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Vector Search",
+    "permalink": "/weaver/pt/docs/valkarnsql/vectors"
+  }
+}

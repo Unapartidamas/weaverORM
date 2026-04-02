@@ -1,0 +1,61 @@
+{
+    "name": "unapartidamas/weaver-orm",
+    "description": "PHP 8.4+ ORM for Symfony. Zero reflection, no proxies, no memory leaks. Worker-safe by design.",
+    "type": "library",
+    "license": "MIT",
+    "keywords": ["orm", "symfony", "php", "database", "mapper", "pyrosql"],
+    "authors": [
+        {
+            "name": "Una Partida Mas SRL",
+            "email": "hector@unapartidamas.com"
+        }
+    ],
+    "require": {
+        "php": "^8.4",
+        "ext-pdo": "*",
+        "psr/simple-cache": "^3.0"
+    },
+    "require-dev": {
+        "phpstan/phpstan": "^1.10",
+        "phpunit/phpunit": "^11.0",
+        "rector/rector": "^1.0",
+        "symfony/console": "^6.4|^7.0",
+        "symfony/dependency-injection": "^6.4|^7.0",
+        "symfony/framework-bundle": "^6.4|^7.0"
+    },
+    "suggest": {
+        "doctrine/dbal": "Only needed if using the Doctrine compatibility bridge for migration",
+        "doctrine/orm": "Only needed if using the Doctrine compatibility bridge for migration",
+        "illuminate/database": "Only needed if using the Laravel bridge",
+        "illuminate/events": "Only needed if using the Laravel bridge",
+        "symfony/framework-bundle": "Required for WeaverBundle and Symfony integration",
+        "symfony/console": "Required for Weaver CLI commands",
+        "mongodb/mongodb": "Required for MongoDB document mapper support",
+        "ext-mongodb": "Required for MongoDB support",
+        "ext-pdo_pgsql": "Required for PostgreSQL/PyroSQL connections",
+        "ext-pdo_mysql": "Required for MySQL connections"
+    },
+    "autoload": {
+        "psr-4": {
+            "Weaver\\ORM\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Weaver\\ORM\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "phpstan/extension-installer": true
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "extra": {
+        "branch-alias": {
+            "dev-main": "1.0-dev"
+        }
+    }
+}

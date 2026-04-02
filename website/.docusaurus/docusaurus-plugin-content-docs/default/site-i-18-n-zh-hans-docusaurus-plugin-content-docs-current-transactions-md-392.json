@@ -1,0 +1,27 @@
+{
+  "id": "transactions",
+  "title": "事务",
+  "description": "Weaver ORM provides TransactionManager, a dedicated service for managing database transactions. It supports simple atomic blocks, manual begin/commit/rollback, nested transactions via savepoints, and optimistic locking.",
+  "source": "@site/i18n/zh-Hans/docusaurus-plugin-content-docs/current/transactions.md",
+  "sourceDirName": ".",
+  "slug": "/transactions",
+  "permalink": "/weaver/zh-Hans/docs/transactions",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/weaver-orm/weaver/tree/main/website/docs/transactions.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "transactions",
+    "title": "事务"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "生命周期钩子",
+    "permalink": "/weaver/zh-Hans/docs/lifecycle"
+  },
+  "next": {
+    "title": "Schema 与迁移",
+    "permalink": "/weaver/zh-Hans/docs/schema-migrations"
+  }
+}

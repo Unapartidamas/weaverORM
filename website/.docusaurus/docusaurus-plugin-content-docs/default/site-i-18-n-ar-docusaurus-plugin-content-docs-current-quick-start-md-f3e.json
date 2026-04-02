@@ -1,0 +1,27 @@
+{
+  "id": "quick-start",
+  "title": "البدء السريع",
+  "description": "يستعرض هذا الدليل مثالاً كاملاً وعملياً: تعريف كيان User، وكتابة مُعيِّنه، وتنفيذ عمليات الاستمرار الأساسية باستخدام EntityWorkspace.",
+  "source": "@site/i18n/ar/docusaurus-plugin-content-docs/current/quick-start.md",
+  "sourceDirName": ".",
+  "slug": "/quick-start",
+  "permalink": "/weaver/ar/docs/quick-start",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/weaver-orm/weaver/tree/main/website/docs/quick-start.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "quick-start",
+    "title": "البدء السريع"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "التثبيت",
+    "permalink": "/weaver/ar/docs/installation"
+  },
+  "next": {
+    "title": "إعداد Symfony",
+    "permalink": "/weaver/ar/docs/configuration"
+  }
+}

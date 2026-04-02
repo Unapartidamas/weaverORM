@@ -1,0 +1,27 @@
+{
+  "id": "repositories",
+  "title": "仓库",
+  "description": "Repositories are the primary way to read entities from the database. Every entity has a corresponding repository that encapsulates all query logic for that entity, keeping controllers and services free of raw SQL or query-builder calls.",
+  "source": "@site/i18n/zh-Hans/docusaurus-plugin-content-docs/current/repositories.md",
+  "sourceDirName": ".",
+  "slug": "/repositories",
+  "permalink": "/weaver/zh-Hans/docs/repositories",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/weaver-orm/weaver/tree/main/website/docs/repositories.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "repositories",
+    "title": "仓库"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "实体工作区",
+    "permalink": "/weaver/zh-Hans/docs/workspace"
+  },
+  "next": {
+    "title": "查询构建器",
+    "permalink": "/weaver/zh-Hans/docs/querying"
+  }
+}

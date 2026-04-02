@@ -1,0 +1,27 @@
+{
+  "id": "installation",
+  "title": "Installation",
+  "description": "Requirements",
+  "source": "@site/docs/installation.md",
+  "sourceDirName": ".",
+  "slug": "/installation",
+  "permalink": "/weaver/docs/installation",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/weaver-orm/weaver/tree/main/website/docs/installation.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "installation",
+    "title": "Installation"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Introduction",
+    "permalink": "/weaver/docs/"
+  },
+  "next": {
+    "title": "Quick Start",
+    "permalink": "/weaver/docs/quick-start"
+  }
+}

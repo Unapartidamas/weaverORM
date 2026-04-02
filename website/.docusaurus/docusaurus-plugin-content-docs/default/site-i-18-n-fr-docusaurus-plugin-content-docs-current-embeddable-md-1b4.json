@@ -1,0 +1,27 @@
+{
+  "id": "embeddable",
+  "title": "Objets intégrables",
+  "description": "Un objet intégrable (aussi appelé objet valeur dans la terminologie DDD) est une classe PHP dont les propriétés sont stockées sous forme de colonnes dans la table de l'entité parente — pas de jointure, pas de table séparée. Weaver gère le mapping des colonnes et la logique de préfixe via un AbstractEmbeddableMapper dédié.",
+  "source": "@site/i18n/fr/docusaurus-plugin-content-docs/current/embeddable.md",
+  "sourceDirName": ".",
+  "slug": "/embeddable",
+  "permalink": "/weaver/fr/docs/embeddable",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/weaver-orm/weaver/tree/main/website/docs/embeddable.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "embeddable",
+    "title": "Objets intégrables"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Relations",
+    "permalink": "/weaver/fr/docs/relations"
+  },
+  "next": {
+    "title": "Mapping d'héritage",
+    "permalink": "/weaver/fr/docs/inheritance"
+  }
+}

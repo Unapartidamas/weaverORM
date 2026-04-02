@@ -1,0 +1,27 @@
+{
+  "id": "configuration",
+  "title": "Symfony-Konfiguration",
+  "description": "Weaver ORM wird über config/packages/weaver.yaml konfiguriert. Diese Seite behandelt alle verfügbaren Optionen.",
+  "source": "@site/i18n/de/docusaurus-plugin-content-docs/current/configuration.md",
+  "sourceDirName": ".",
+  "slug": "/configuration",
+  "permalink": "/weaver/de/docs/configuration",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/weaver-orm/weaver/tree/main/website/docs/configuration.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "configuration",
+    "title": "Symfony-Konfiguration"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Schnellstart",
+    "permalink": "/weaver/de/docs/quick-start"
+  },
+  "next": {
+    "title": "Entity-Mapping",
+    "permalink": "/weaver/de/docs/entity-mapping"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "configuration",
+  "title": "إعداد Symfony",
+  "description": "يُعدَّ Weaver ORM عبر config/packages/weaver.yaml. تغطي هذه الصفحة كل خيار متاح.",
+  "source": "@site/i18n/ar/docusaurus-plugin-content-docs/current/configuration.md",
+  "sourceDirName": ".",
+  "slug": "/configuration",
+  "permalink": "/weaver/ar/docs/configuration",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/weaver-orm/weaver/tree/main/website/docs/configuration.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "configuration",
+    "title": "إعداد Symfony"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "البدء السريع",
+    "permalink": "/weaver/ar/docs/quick-start"
+  },
+  "next": {
+    "title": "تعيين الكيانات",
+    "permalink": "/weaver/ar/docs/entity-mapping"
+  }
+}

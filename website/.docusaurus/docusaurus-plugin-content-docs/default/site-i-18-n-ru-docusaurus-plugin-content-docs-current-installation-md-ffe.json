@@ -1,0 +1,27 @@
+{
+  "id": "installation",
+  "title": "Установка",
+  "description": "Требования",
+  "source": "@site/i18n/ru/docusaurus-plugin-content-docs/current/installation.md",
+  "sourceDirName": ".",
+  "slug": "/installation",
+  "permalink": "/weaver/ru/docs/installation",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/weaver-orm/weaver/tree/main/website/docs/installation.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "installation",
+    "title": "Установка"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Введение",
+    "permalink": "/weaver/ru/docs/"
+  },
+  "next": {
+    "title": "Быстрый старт",
+    "permalink": "/weaver/ru/docs/quick-start"
+  }
+}

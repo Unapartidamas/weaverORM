@@ -1,0 +1,27 @@
+{
+  "id": "installation",
+  "title": "インストール",
+  "description": "要件",
+  "source": "@site/i18n/ja/docusaurus-plugin-content-docs/current/installation.md",
+  "sourceDirName": ".",
+  "slug": "/installation",
+  "permalink": "/weaver/ja/docs/installation",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/weaver-orm/weaver/tree/main/website/docs/installation.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "installation",
+    "title": "インストール"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "はじめに",
+    "permalink": "/weaver/ja/docs/"
+  },
+  "next": {
+    "title": "クイックスタート",
+    "permalink": "/weaver/ja/docs/quick-start"
+  }
+}

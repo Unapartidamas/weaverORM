@@ -1,0 +1,27 @@
+{
+  "id": "relations",
+  "title": "العلاقات",
+  "description": "Weaver ORM defines all relation metadata inside the entity's mapper class via a RelationMap. There are no attributes on entity properties and no runtime reflection. Relations are always loaded explicitly — Weaver never issues surprise queries behind your back.",
+  "source": "@site/i18n/ar/docusaurus-plugin-content-docs/current/relations.md",
+  "sourceDirName": ".",
+  "slug": "/relations",
+  "permalink": "/weaver/ar/docs/relations",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/weaver-orm/weaver/tree/main/website/docs/relations.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "relations",
+    "title": "العلاقات"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "تعيين الكيانات",
+    "permalink": "/weaver/ar/docs/entity-mapping"
+  },
+  "next": {
+    "title": "الكائنات المضمنة",
+    "permalink": "/weaver/ar/docs/embeddable"
+  }
+}

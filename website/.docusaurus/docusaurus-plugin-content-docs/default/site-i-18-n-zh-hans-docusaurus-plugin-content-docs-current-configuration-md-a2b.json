@@ -1,0 +1,27 @@
+{
+  "id": "configuration",
+  "title": "Symfony 配置",
+  "description": "Weaver ORM 通过 config/packages/weaver.yaml 进行配置。本页涵盖所有可用选项。",
+  "source": "@site/i18n/zh-Hans/docusaurus-plugin-content-docs/current/configuration.md",
+  "sourceDirName": ".",
+  "slug": "/configuration",
+  "permalink": "/weaver/zh-Hans/docs/configuration",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/weaver-orm/weaver/tree/main/website/docs/configuration.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "configuration",
+    "title": "Symfony 配置"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "快速开始",
+    "permalink": "/weaver/zh-Hans/docs/quick-start"
+  },
+  "next": {
+    "title": "实体映射",
+    "permalink": "/weaver/zh-Hans/docs/entity-mapping"
+  }
+}

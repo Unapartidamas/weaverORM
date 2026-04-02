@@ -1,0 +1,27 @@
+{
+  "id": "configuration",
+  "title": "Конфигурация Symfony",
+  "description": "Weaver ORM настраивается через config/packages/weaver.yaml. На этой странице описаны все доступные параметры.",
+  "source": "@site/i18n/ru/docusaurus-plugin-content-docs/current/configuration.md",
+  "sourceDirName": ".",
+  "slug": "/configuration",
+  "permalink": "/weaver/ru/docs/configuration",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/weaver-orm/weaver/tree/main/website/docs/configuration.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "configuration",
+    "title": "Конфигурация Symfony"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Быстрый старт",
+    "permalink": "/weaver/ru/docs/quick-start"
+  },
+  "next": {
+    "title": "Маппинг сущностей",
+    "permalink": "/weaver/ru/docs/entity-mapping"
+  }
+}

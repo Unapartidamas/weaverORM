@@ -1,0 +1,27 @@
+{
+  "id": "quick-start",
+  "title": "Démarrage rapide",
+  "description": "Ce guide présente un exemple complet et fonctionnel : définir une entité User, écrire son mapper et effectuer des opérations de persistance de base avec EntityWorkspace.",
+  "source": "@site/i18n/fr/docusaurus-plugin-content-docs/current/quick-start.md",
+  "sourceDirName": ".",
+  "slug": "/quick-start",
+  "permalink": "/weaver/fr/docs/quick-start",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/weaver-orm/weaver/tree/main/website/docs/quick-start.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "quick-start",
+    "title": "Démarrage rapide"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Installation",
+    "permalink": "/weaver/fr/docs/installation"
+  },
+  "next": {
+    "title": "Configuration Symfony",
+    "permalink": "/weaver/fr/docs/configuration"
+  }
+}

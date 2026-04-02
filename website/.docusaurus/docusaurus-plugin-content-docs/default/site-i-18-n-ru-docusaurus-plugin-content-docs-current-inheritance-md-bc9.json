@@ -1,0 +1,27 @@
+{
+  "id": "inheritance",
+  "title": "Маппинг Наследования",
+  "description": "Weaver ORM supports three inheritance patterns. Choose based on how similar your subclass schemas are and how often you need to query across all types in a single SELECT.",
+  "source": "@site/i18n/ru/docusaurus-plugin-content-docs/current/inheritance.md",
+  "sourceDirName": ".",
+  "slug": "/inheritance",
+  "permalink": "/weaver/ru/docs/inheritance",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/weaver-orm/weaver/tree/main/website/docs/inheritance.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "inheritance",
+    "title": "Маппинг Наследования"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Встраиваемые Объекты",
+    "permalink": "/weaver/ru/docs/embeddable"
+  },
+  "next": {
+    "title": "Concerns и Traits",
+    "permalink": "/weaver/ru/docs/concerns"
+  }
+}

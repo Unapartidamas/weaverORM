@@ -1,0 +1,27 @@
+{
+  "id": "lifecycle",
+  "title": "生命周期钩子",
+  "description": "Weaver ORM provides a set of PHP 8 attributes that let you attach callbacks directly to entity methods. These callbacks are invoked at specific points in the entity's persistence lifecycle — before or after insert, update, delete, and load operations.",
+  "source": "@site/i18n/zh-Hans/docusaurus-plugin-content-docs/current/lifecycle.md",
+  "sourceDirName": ".",
+  "slug": "/lifecycle",
+  "permalink": "/weaver/zh-Hans/docs/lifecycle",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/weaver-orm/weaver/tree/main/website/docs/lifecycle.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "lifecycle",
+    "title": "生命周期钩子"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "查询构建器",
+    "permalink": "/weaver/zh-Hans/docs/querying"
+  },
+  "next": {
+    "title": "事务",
+    "permalink": "/weaver/zh-Hans/docs/transactions"
+  }
+}

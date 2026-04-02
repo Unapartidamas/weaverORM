@@ -1,0 +1,27 @@
+{
+  "id": "configuration",
+  "title": "Symfony 設定",
+  "description": "Weaver ORM は config/packages/weaver.yaml で設定します。このページではすべての利用可能なオプションを説明します。",
+  "source": "@site/i18n/ja/docusaurus-plugin-content-docs/current/configuration.md",
+  "sourceDirName": ".",
+  "slug": "/configuration",
+  "permalink": "/weaver/ja/docs/configuration",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/weaver-orm/weaver/tree/main/website/docs/configuration.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "configuration",
+    "title": "Symfony 設定"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "クイックスタート",
+    "permalink": "/weaver/ja/docs/quick-start"
+  },
+  "next": {
+    "title": "エンティティマッピング",
+    "permalink": "/weaver/ja/docs/entity-mapping"
+  }
+}

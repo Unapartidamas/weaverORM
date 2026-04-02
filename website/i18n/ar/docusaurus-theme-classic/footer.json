@@ -1,0 +1,23 @@
+{
+  "link.title.Docs": {
+    "message": "التوثيق"
+  },
+  "link.title.Community": {
+    "message": "المجتمع"
+  },
+  "link.title.More": {
+    "message": "المزيد"
+  },
+  "link.item.label.Introduction": {
+    "message": "مقدمة"
+  },
+  "link.item.label.Quick Start": {
+    "message": "البدء السريع"
+  },
+  "link.item.label.GitHub": {
+    "message": "GitHub"
+  },
+  "copyright": {
+    "message": "حقوق النشر © Weaver ORM. مبني بـ Docusaurus."
+  }
+}

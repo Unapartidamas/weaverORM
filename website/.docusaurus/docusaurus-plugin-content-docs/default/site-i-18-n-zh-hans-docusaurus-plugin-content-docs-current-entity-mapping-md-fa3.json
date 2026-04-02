@@ -1,0 +1,27 @@
+{
+  "id": "entity-mapping",
+  "title": "实体映射",
+  "description": "Weaver ORM 通过将所有映射信息放入专用的映射器类（Mapper Class）中，将领域对象与持久化元数据分离。本页涵盖映射器配置的各个方面。",
+  "source": "@site/i18n/zh-Hans/docusaurus-plugin-content-docs/current/entity-mapping.md",
+  "sourceDirName": ".",
+  "slug": "/entity-mapping",
+  "permalink": "/weaver/zh-Hans/docs/entity-mapping",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/weaver-orm/weaver/tree/main/website/docs/entity-mapping.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "entity-mapping",
+    "title": "实体映射"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Symfony 配置",
+    "permalink": "/weaver/zh-Hans/docs/configuration"
+  },
+  "next": {
+    "title": "关联关系",
+    "permalink": "/weaver/zh-Hans/docs/relations"
+  }
+}

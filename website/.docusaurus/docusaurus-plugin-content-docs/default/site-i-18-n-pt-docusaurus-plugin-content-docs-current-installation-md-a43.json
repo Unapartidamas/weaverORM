@@ -1,0 +1,27 @@
+{
+  "id": "installation",
+  "title": "Instalação",
+  "description": "Requisitos",
+  "source": "@site/i18n/pt/docusaurus-plugin-content-docs/current/installation.md",
+  "sourceDirName": ".",
+  "slug": "/installation",
+  "permalink": "/weaver/pt/docs/installation",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/weaver-orm/weaver/tree/main/website/docs/installation.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "installation",
+    "title": "Instalação"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Introdução",
+    "permalink": "/weaver/pt/docs/"
+  },
+  "next": {
+    "title": "Início Rápido",
+    "permalink": "/weaver/pt/docs/quick-start"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "valkarnsql/time-travel",
+  "title": "Consultas de Viagem no Tempo",
+  "description": "ValkarnSQL maintains a complete history of every row that has ever existed in the database. Time travel queries let you read data as it appeared at any previous point in time by appending an AS OF clause to the FROM clause of a SELECT statement. This is useful for audit log replay, point-in-time recovery, compliance reports, and debugging data mutations.",
+  "source": "@site/i18n/pt/docusaurus-plugin-content-docs/current/valkarnsql/time-travel.md",
+  "sourceDirName": "valkarnsql",
+  "slug": "/valkarnsql/time-travel",
+  "permalink": "/weaver/pt/docs/valkarnsql/time-travel",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/weaver-orm/weaver/tree/main/website/docs/valkarnsql/time-travel.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "time-travel",
+    "title": "Consultas de Viagem no Tempo",
+    "sidebar_label": "Time Travel"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Overview",
+    "permalink": "/weaver/pt/docs/valkarnsql/overview"
+  },
+  "next": {
+    "title": "Branches",
+    "permalink": "/weaver/pt/docs/valkarnsql/branches"
+  }
+}

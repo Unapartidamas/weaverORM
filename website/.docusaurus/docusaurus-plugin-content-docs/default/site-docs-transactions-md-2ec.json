@@ -1,0 +1,27 @@
+{
+  "id": "transactions",
+  "title": "Transactions",
+  "description": "Weaver ORM provides TransactionManager, a dedicated service for managing database transactions. It supports simple atomic blocks, manual begin/commit/rollback, nested transactions via savepoints, and optimistic locking.",
+  "source": "@site/docs/transactions.md",
+  "sourceDirName": ".",
+  "slug": "/transactions",
+  "permalink": "/weaver/docs/transactions",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/weaver-orm/weaver/tree/main/website/docs/transactions.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "transactions",
+    "title": "Transactions"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Lifecycle Hooks",
+    "permalink": "/weaver/docs/lifecycle"
+  },
+  "next": {
+    "title": "Schema & Migrations",
+    "permalink": "/weaver/docs/schema-migrations"
+  }
+}

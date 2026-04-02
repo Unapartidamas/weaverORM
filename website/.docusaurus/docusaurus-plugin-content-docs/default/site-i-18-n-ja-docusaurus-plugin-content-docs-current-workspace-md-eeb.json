@@ -1,0 +1,27 @@
+{
+  "id": "workspace",
+  "title": "EntityWorkspace",
+  "description": "EntityWorkspace is Weaver ORM's central unit-of-work service. It tracks entities across a single request, batches all writes, and flushes them to the database in a single coordinated operation. Think of it as the improved successor to Doctrine's EntityManager, redesigned for clarity, worker safety, and explicit intent.",
+  "source": "@site/i18n/ja/docusaurus-plugin-content-docs/current/workspace.md",
+  "sourceDirName": ".",
+  "slug": "/workspace",
+  "permalink": "/weaver/ja/docs/workspace",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/weaver-orm/weaver/tree/main/website/docs/workspace.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "workspace",
+    "title": "EntityWorkspace"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Concerns と Traits",
+    "permalink": "/weaver/ja/docs/concerns"
+  },
+  "next": {
+    "title": "リポジトリ",
+    "permalink": "/weaver/ja/docs/repositories"
+  }
+}

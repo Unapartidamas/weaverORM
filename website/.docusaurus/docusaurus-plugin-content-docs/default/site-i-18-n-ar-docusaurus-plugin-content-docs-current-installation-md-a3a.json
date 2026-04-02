@@ -1,0 +1,27 @@
+{
+  "id": "installation",
+  "title": "التثبيت",
+  "description": "المتطلبات",
+  "source": "@site/i18n/ar/docusaurus-plugin-content-docs/current/installation.md",
+  "sourceDirName": ".",
+  "slug": "/installation",
+  "permalink": "/weaver/ar/docs/installation",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/weaver-orm/weaver/tree/main/website/docs/installation.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "installation",
+    "title": "التثبيت"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "مقدمة",
+    "permalink": "/weaver/ar/docs/"
+  },
+  "next": {
+    "title": "البدء السريع",
+    "permalink": "/weaver/ar/docs/quick-start"
+  }
+}

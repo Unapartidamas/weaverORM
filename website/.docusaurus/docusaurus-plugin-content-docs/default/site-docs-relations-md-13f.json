@@ -1,0 +1,27 @@
+{
+  "id": "relations",
+  "title": "Relations",
+  "description": "Weaver ORM defines all relation metadata inside the entity's mapper class via a RelationMap. There are no attributes on entity properties and no runtime reflection. Relations are always loaded explicitly — Weaver never issues surprise queries behind your back.",
+  "source": "@site/docs/relations.md",
+  "sourceDirName": ".",
+  "slug": "/relations",
+  "permalink": "/weaver/docs/relations",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/weaver-orm/weaver/tree/main/website/docs/relations.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "relations",
+    "title": "Relations"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Entity Mapping",
+    "permalink": "/weaver/docs/entity-mapping"
+  },
+  "next": {
+    "title": "Embeddable Objects",
+    "permalink": "/weaver/docs/embeddable"
+  }
+}

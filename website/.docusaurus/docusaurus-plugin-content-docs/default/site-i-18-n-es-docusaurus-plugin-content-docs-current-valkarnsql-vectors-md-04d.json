@@ -1,0 +1,28 @@
+{
+  "id": "valkarnsql/vectors",
+  "title": "Búsqueda Vectorial",
+  "description": "Vector similarity search lets you find rows whose stored embedding vectors are closest to a query vector. This is the foundation of semantic search, recommendation systems, and AI-powered retrieval — where \"closeness\" is measured by cosine distance, Euclidean (L2) distance, or dot product, rather than exact string or numeric equality.",
+  "source": "@site/i18n/es/docusaurus-plugin-content-docs/current/valkarnsql/vectors.md",
+  "sourceDirName": "valkarnsql",
+  "slug": "/valkarnsql/vectors",
+  "permalink": "/weaver/es/docs/valkarnsql/vectors",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/weaver-orm/weaver/tree/main/website/docs/valkarnsql/vectors.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "vectors",
+    "title": "Búsqueda Vectorial",
+    "sidebar_label": "Vector Search"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Approximate Queries",
+    "permalink": "/weaver/es/docs/valkarnsql/approximate"
+  },
+  "next": {
+    "title": "WASM UDFs",
+    "permalink": "/weaver/es/docs/valkarnsql/wasm-udfs"
+  }
+}
