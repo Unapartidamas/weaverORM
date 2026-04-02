@@ -96,10 +96,9 @@ class Connection
     public function fetchAllAssociative(string $sql, array $params = []): array
     {
         $params = $this->normalizeParams($sql, $params);
-        $stmt = $this->pdo->prepare($sql);
-        foreach ($params as $i => $v) { $stmt->bindValue($i + 1, $v); }
+        $sql = !empty($params) ? $this->interpolateParams($sql, $params) : $sql;
         try {
-            $stmt->execute();
+            $stmt = $this->pdo->query($sql);
         } catch (\PDOException $e) {
             throw Exception\ExceptionConverter::convert($e, $sql);
         }
@@ -110,10 +109,9 @@ class Connection
     public function fetchOne(string $sql, array $params = []): mixed
     {
         $params = $this->normalizeParams($sql, $params);
-        $stmt = $this->pdo->prepare($sql);
-        foreach ($params as $i => $v) { $stmt->bindValue($i + 1, $v); }
+        $sql = !empty($params) ? $this->interpolateParams($sql, $params) : $sql;
         try {
-            $stmt->execute();
+            $stmt = $this->pdo->query($sql);
         } catch (\PDOException $e) {
             throw Exception\ExceptionConverter::convert($e, $sql);
         }
@@ -124,10 +122,9 @@ class Connection
     public function fetchFirstColumn(string $sql, array $params = []): array
     {
         $params = $this->normalizeParams($sql, $params);
-        $stmt = $this->pdo->prepare($sql);
-        foreach ($params as $i => $v) { $stmt->bindValue($i + 1, $v); }
+        $sql = $this->interpolateParams($sql, $params);
         try {
-            $stmt->execute();
+            $stmt = $this->pdo->query($sql);
         } catch (\PDOException $e) {
             throw Exception\ExceptionConverter::convert($e, $sql);
         }
@@ -138,10 +135,9 @@ class Connection
     public function executeQuery(string $sql, array $params = []): Result
     {
         $params = $this->normalizeParams($sql, $params);
-        $stmt = $this->pdo->prepare($sql);
-        foreach ($params as $i => $v) { $stmt->bindValue($i + 1, $v); }
+        $sql = !empty($params) ? $this->interpolateParams($sql, $params) : $sql;
         try {
-            $stmt->execute();
+            $stmt = $this->pdo->query($sql);
         } catch (\PDOException $e) {
             throw Exception\ExceptionConverter::convert($e, $sql);
         }
@@ -307,5 +303,21 @@ class Connection
         }, $sql);
 
         return $positional;
+    }
+
+    private function interpolateParams(string $sql, array $params): string
+    {
+        $i = 0;
+        return preg_replace_callback('/\?/', function () use ($params, &$i): string {
+            $val = $params[$i++] ?? null;
+            if ($val === null) return 'NULL';
+            if (is_bool($val)) return $val ? 'true' : 'false';
+            if (is_int($val) || is_float($val)) return (string) $val;
+            if (is_object($val)) {
+                if (method_exists($val, 'getId')) return (string) $val->getId();
+                if ($val instanceof \DateTimeInterface) return "'" . $val->format('Y-m-d H:i:s') . "'";
+            }
+            return "'" . str_replace("'", "''", (string) $val) . "'";
+        }, $sql);
     }
 }

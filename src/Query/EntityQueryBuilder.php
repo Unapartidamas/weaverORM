@@ -1879,7 +1879,7 @@ final class EntityQueryBuilder
             return "'" . str_replace("'", "''", (string) $val) . "'";
         }, $sql);
 
-        return $this->connection->query($sql);
+        file_put_contents("/tmp/qb.log", $sql . "\n", FILE_APPEND); return $this->connection->query($sql);
     }
 
     private function buildUnionSQL(): array
