@@ -81,8 +81,11 @@ class Connection
     {
         $params = $this->normalizeParams($sql, $params);
         $stmt = $this->pdo->prepare($sql);
+        foreach ($params as $i => $v) {
+            $stmt->bindValue($i + 1, $v);
+        }
         try {
-            $stmt->execute($params ?: null);
+            $stmt->execute();
         } catch (\PDOException $e) {
             throw Exception\ExceptionConverter::convert($e, $sql);
         }
@@ -94,8 +97,9 @@ class Connection
     {
         $params = $this->normalizeParams($sql, $params);
         $stmt = $this->pdo->prepare($sql);
+        foreach ($params as $i => $v) { $stmt->bindValue($i + 1, $v); }
         try {
-            $stmt->execute($params ?: null);
+            $stmt->execute();
         } catch (\PDOException $e) {
             throw Exception\ExceptionConverter::convert($e, $sql);
         }
@@ -107,8 +111,9 @@ class Connection
     {
         $params = $this->normalizeParams($sql, $params);
         $stmt = $this->pdo->prepare($sql);
+        foreach ($params as $i => $v) { $stmt->bindValue($i + 1, $v); }
         try {
-            $stmt->execute($params ?: null);
+            $stmt->execute();
         } catch (\PDOException $e) {
             throw Exception\ExceptionConverter::convert($e, $sql);
         }
@@ -120,8 +125,9 @@ class Connection
     {
         $params = $this->normalizeParams($sql, $params);
         $stmt = $this->pdo->prepare($sql);
+        foreach ($params as $i => $v) { $stmt->bindValue($i + 1, $v); }
         try {
-            $stmt->execute($params ?: null);
+            $stmt->execute();
         } catch (\PDOException $e) {
             throw Exception\ExceptionConverter::convert($e, $sql);
         }
@@ -133,8 +139,9 @@ class Connection
     {
         $params = $this->normalizeParams($sql, $params);
         $stmt = $this->pdo->prepare($sql);
+        foreach ($params as $i => $v) { $stmt->bindValue($i + 1, $v); }
         try {
-            $stmt->execute($params ?: null);
+            $stmt->execute();
         } catch (\PDOException $e) {
             throw Exception\ExceptionConverter::convert($e, $sql);
         }
