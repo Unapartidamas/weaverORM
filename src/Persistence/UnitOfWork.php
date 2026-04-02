@@ -1550,6 +1550,7 @@ final class UnitOfWork
                 $originalValues[$colName] = null;
             }
         } else {
+            $platform = $this->connection->getDatabasePlatform();
             foreach ($mapper->getColumns() as $col) {
                 if ($col->isPrimary() || $col->isVirtual() || $col->isGenerated()) {
                     continue;
@@ -1558,7 +1559,10 @@ final class UnitOfWork
                 $newVal = $entity->$prop ?? null;
                 $oldVal = $snapshot->$prop ?? null;
                 if ($newVal !== $oldVal) {
-                    $diff[$col->getColumn()] = $newVal;
+                    $type = \Weaver\ORM\DBAL\Type\Type::getType($col->getType());
+                    $diff[$col->getColumn()] = $newVal instanceof \BackedEnum
+                        ? $newVal->value
+                        : $type->convertToDatabaseValue($newVal, $platform);
                     $originalValues[$col->getColumn()] = $oldVal;
                 }
             }
