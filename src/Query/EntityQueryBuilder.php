@@ -1865,18 +1865,16 @@ final class EntityQueryBuilder
 
         $sql    = $this->buildSQL();
         $params = $this->collectAllParams();
-        $types  = $this->qb->getParameterTypes();
+
+        $positional = [];
+        $sql = preg_replace_callback('/:(\w+)\b/', function (array $m) use ($params, &$positional): string {
+            $positional[] = $params[$m[1]] ?? null;
+            return '?';
+        }, $sql);
 
         $stmt = $this->connection->prepare($sql);
-        $index = 1;
-        foreach ($params as $key => $val) {
-            $type = $types[$key] ?? \PDO::PARAM_STR;
-            if ($type instanceof ParameterType) {
-                $type = $type->value;
-            } elseif (is_string($type)) {
-                $type = \PDO::PARAM_STR;
-            }
-            $stmt->bindValue($index++, $val, $type);
+        foreach ($positional as $i => $val) {
+            $stmt->bindValue($i + 1, $val);
         }
         return $stmt->execute();
     }
