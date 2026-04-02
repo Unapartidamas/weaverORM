@@ -133,10 +133,31 @@ class Connection
 
     public function executeQuery(string $sql, array $params = []): Result
     {
-        $stmt = $this->pdo->prepare($sql);
-        $stmt->execute($params ?: null);
+        if (!empty($params) && !array_is_list($params)) {
+            [$sql, $params] = self::convertNamedToPositional($sql, $params);
+        }
+
+        $stmt = $this->cachedPrepare($sql);
+        try {
+            $stmt->execute($params ?: null);
+        } catch (\PDOException $e) {
+            $stmt->closeCursor();
+            throw Exception\ExceptionConverter::convert($e, $sql);
+        }
 
         return new Result($stmt);
+    }
+
+    private static function convertNamedToPositional(string $sql, array $params): array
+    {
+        $positional = [];
+        $sql = preg_replace_callback('/:(\w+)/', function ($m) use ($params, &$positional) {
+            $key = $m[1];
+            $positional[] = $params[$key] ?? null;
+            return '?';
+        }, $sql);
+
+        return [$sql, $positional];
     }
 
     public function createQueryBuilder(): QueryBuilder
