@@ -10,75 +10,53 @@ final class ExceptionConverter
     {
         $code = is_string($e->getCode()) ? $e->getCode() : (string) $e->getCode();
         $msg = $e->getMessage();
+        $combined = $code . ' ' . $msg;
 
-        // 23505 - unique_violation (PostgreSQL/PyroSQL)
-        if (str_contains($code, '23505') || str_contains($msg, '23505')
-            || str_contains($msg, 'Duplicate entry') || str_contains($msg, 'UNIQUE constraint failed')) {
+        if (self::matches($combined, ['23505', 'Duplicate entry', 'UNIQUE constraint failed', 'unique_violation'])) {
             return UniqueConstraintViolation::fromPdoException($e, $sql);
         }
 
-        // 23503 - foreign_key_violation
-        if (str_contains($code, '23503') || str_contains($msg, '23503')
-            || str_contains($msg, 'FOREIGN KEY constraint failed')) {
+        if (self::matches($combined, ['23503', 'FOREIGN KEY constraint failed', 'foreign_key_violation'])) {
             return ForeignKeyViolation::fromPdoException($e, $sql);
         }
 
-        // 23502 - not_null_violation
-        if (str_contains($code, '23502') || str_contains($msg, '23502')
-            || str_contains($msg, 'NOT NULL constraint failed')) {
+        if (self::matches($combined, ['23502', 'NOT NULL constraint failed', 'not_null_violation'])) {
             return NotNullViolation::fromPdoException($e, $sql);
         }
 
-        // 23514 - check_violation
-        if (str_contains($code, '23514') || str_contains($msg, '23514')
-            || str_contains($msg, 'CHECK constraint failed')) {
+        if (self::matches($combined, ['23514', 'CHECK constraint failed', 'check_violation'])) {
             return CheckViolation::fromPdoException($e, $sql);
         }
 
-        // 42P01 - undefined_table / 42S02 (MySQL)
-        if (str_contains($code, '42P01') || str_contains($code, '42S02')
-            || str_contains($msg, 'does not exist') || str_contains($msg, "doesn't exist")
-            || str_contains($msg, 'no such table')) {
+        if (self::matches($combined, ['42P01', '42S02', 'does not exist', "doesn't exist", 'no such table', 'undefined_table'])) {
             return TableNotFoundException::fromPdoException($e, $sql);
         }
 
-        // 42703 - undefined_column / 42S22 (MySQL)
-        if (str_contains($code, '42703') || str_contains($code, '42S22')
-            || str_contains($msg, 'Unknown column') || str_contains($msg, 'no such column')) {
+        if (self::matches($combined, ['42703', '42S22', 'Unknown column', 'no such column', 'undefined_column'])) {
             return ColumnNotFoundException::fromPdoException($e, $sql);
         }
 
-        // 42601, 42000 - syntax_error
-        if (str_starts_with($code, '42') || str_contains($msg, 'syntax error')) {
+        if (self::matches($combined, ['42601', '42000', 'syntax error', 'syntax_error'])) {
             return SyntaxError::fromPdoException($e, $sql);
         }
 
-        // 40P01 - deadlock_detected / 40001 (MySQL)
-        if (str_contains($code, '40P01') || str_contains($code, '40001')
-            || str_contains($msg, 'deadlock') || str_contains($msg, 'Deadlock')) {
+        if (self::matches($combined, ['40P01', '40001', 'deadlock', 'Deadlock'])) {
             return DeadlockException::fromPdoException($e, $sql);
         }
 
-        // Lock wait timeout (MySQL 1205)
-        if (str_contains($msg, 'Lock wait timeout') || str_contains($msg, 'lock timeout')) {
+        if (self::matches($combined, ['Lock wait timeout', 'lock timeout'])) {
             return LockWaitTimeoutException::fromPdoException($e, $sql);
         }
 
-        // 25006 - read_only_sql_transaction
-        if (str_contains($code, '25006') || str_contains($msg, 'read-only')
-            || str_contains($msg, 'READ ONLY')) {
+        if (self::matches($combined, ['25006', 'read-only', 'READ ONLY', 'read_only'])) {
             return ReadOnlyViolation::fromPdoException($e, $sql);
         }
 
-        // 22001 - string_data_right_truncation (value too long)
-        if (str_contains($code, '22001') || str_contains($msg, 'value too long')
-            || str_contains($msg, 'Data too long')) {
+        if (self::matches($combined, ['22001', 'value too long', 'Data too long', 'string_data_right_truncation'])) {
             return ValueTooLongException::fromPdoException($e, $sql);
         }
 
-        // 08xxx - connection_exception
-        if (str_starts_with($code, '08') || str_contains($msg, 'Connection refused')
-            || str_contains($msg, 'server has gone away') || str_contains($msg, 'Lost connection')) {
+        if (self::matches($combined, ['08', 'Connection refused', 'server has gone away', 'Lost connection', 'connection_exception'])) {
             return ConnectionException::fromPdoException($e, $sql);
         }
 
@@ -88,5 +66,15 @@ final class ExceptionConverter
             $code,
             $e,
         );
+    }
+
+    private static function matches(string $haystack, array $needles): bool
+    {
+        foreach ($needles as $needle) {
+            if (str_contains($haystack, $needle)) {
+                return true;
+            }
+        }
+        return false;
     }
 }
