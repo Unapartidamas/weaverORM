@@ -79,57 +79,46 @@ class Connection
 
     public function fetchAssociative(string $sql, array $params = []): array|false
     {
-        if (!empty($params) && !array_is_list($params)) {
-            [$sql, $params] = $this->resolveNamedParameters($sql, $params);
-        }
-        $stmt = $this->cachedPrepare($sql);
+        $params = $this->normalizeParams($sql, $params);
+        $stmt = $this->pdo->prepare($sql);
         try {
             $stmt->execute($params ?: null);
         } catch (\PDOException $e) {
             throw Exception\ExceptionConverter::convert($e, $sql);
         }
-        $row = $stmt->fetch(PDO::FETCH_ASSOC);
-        $stmt->closeCursor();
 
-        return $row;
+        return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
     public function fetchAllAssociative(string $sql, array $params = []): array
     {
-        if (!empty($params) && !array_is_list($params)) {
-            [$sql, $params] = $this->resolveNamedParameters($sql, $params);
-        }
-        $stmt = $this->cachedPrepare($sql);
+        $params = $this->normalizeParams($sql, $params);
+        $stmt = $this->pdo->prepare($sql);
         try {
             $stmt->execute($params ?: null);
         } catch (\PDOException $e) {
             throw Exception\ExceptionConverter::convert($e, $sql);
         }
-        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        $stmt->closeCursor();
 
-        return $rows;
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function fetchOne(string $sql, array $params = []): mixed
     {
-        if (!empty($params) && !array_is_list($params)) {
-            [$sql, $params] = $this->resolveNamedParameters($sql, $params);
-        }
-        $stmt = $this->cachedPrepare($sql);
+        $params = $this->normalizeParams($sql, $params);
+        $stmt = $this->pdo->prepare($sql);
         try {
             $stmt->execute($params ?: null);
         } catch (\PDOException $e) {
             throw Exception\ExceptionConverter::convert($e, $sql);
         }
-        $val = $stmt->fetchColumn();
-        $stmt->closeCursor();
 
-        return $val;
+        return $stmt->fetchColumn();
     }
 
     public function fetchFirstColumn(string $sql, array $params = []): array
     {
+        $params = $this->normalizeParams($sql, $params);
         $stmt = $this->pdo->prepare($sql);
         try {
             $stmt->execute($params ?: null);
@@ -142,10 +131,7 @@ class Connection
 
     public function executeQuery(string $sql, array $params = []): Result
     {
-        if (!empty($params) && !array_is_list($params)) {
-            [$sql, $params] = $this->resolveNamedParameters($sql, $params);
-        }
-
+        $params = $this->normalizeParams($sql, $params);
         $stmt = $this->pdo->prepare($sql);
         try {
             $stmt->execute($params ?: null);
@@ -301,14 +287,18 @@ class Connection
         return $this->stmtCache[$sql] = $this->pdo->prepare($sql);
     }
 
-    private function resolveNamedParameters(string $sql, array $params): array
+    private function normalizeParams(string &$sql, array $params): array
     {
+        if (empty($params) || array_is_list($params)) {
+            return $params;
+        }
+
         $positional = [];
-        $resolved = preg_replace_callback('/:(\w+)\b/', function (array $m) use ($params, &$positional): string {
+        $sql = preg_replace_callback('/:(\w+)\b/', function (array $m) use ($params, &$positional): string {
             $positional[] = $params[$m[1]] ?? null;
             return '?';
         }, $sql);
 
-        return [$resolved, $positional];
+        return $positional;
     }
 }
