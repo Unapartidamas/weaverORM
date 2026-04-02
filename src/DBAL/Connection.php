@@ -122,7 +122,7 @@ class Connection
     public function fetchFirstColumn(string $sql, array $params = []): array
     {
         $params = $this->normalizeParams($sql, $params);
-        $sql = $this->interpolateParams($sql, $params);
+        $sql = !empty($params) ? $this->interpolateParams($sql, $params) : $sql;
         try {
             $stmt = $this->pdo->query($sql);
         } catch (\PDOException $e) {
