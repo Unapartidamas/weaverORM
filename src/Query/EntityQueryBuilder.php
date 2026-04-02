@@ -1867,18 +1867,19 @@ final class EntityQueryBuilder
         $sql    = $this->buildSQL();
         $params = $this->collectAllParams();
 
-        $positional = [];
-        $sql = preg_replace_callback('/:(\w+)\b/', function (array $m) use ($params, &$positional): string {
-            $positional[] = $params[$m[1]] ?? null;
-            return '?';
+        $sql = preg_replace_callback('/:(\w+)\b/', function (array $m) use ($params): string {
+            $val = $params[$m[1]] ?? null;
+            if ($val === null) return 'NULL';
+            if (is_bool($val)) return $val ? 'true' : 'false';
+            if (is_int($val) || is_float($val)) return (string) $val;
+            if (is_object($val)) {
+                if (method_exists($val, 'getId')) return (string) $val->getId();
+                if ($val instanceof \DateTimeInterface) return "'" . $val->format('Y-m-d H:i:s') . "'";
+            }
+            return "'" . str_replace("'", "''", (string) $val) . "'";
         }, $sql);
 
-        $stmt = $this->connection->prepare($sql);
-        foreach ($positional as $i => $val) {
-            $stmt->bindValue($i + 1, $val);
-        }
-        file_put_contents("/tmp/qb_exec.log", $sql . " | " . json_encode($positional) . "
-", FILE_APPEND); return $stmt->execute();
+        return $this->connection->query($sql);
     }
 
     private function buildUnionSQL(): array
