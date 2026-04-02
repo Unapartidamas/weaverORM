@@ -79,6 +79,9 @@ class Connection
 
     public function fetchAssociative(string $sql, array $params = []): array|false
     {
+        if (!empty($params) && !array_is_list($params)) {
+            [$sql, $params] = $this->resolveNamedParameters($sql, $params);
+        }
         $stmt = $this->cachedPrepare($sql);
         try {
             $stmt->execute($params ?: null);
@@ -93,6 +96,9 @@ class Connection
 
     public function fetchAllAssociative(string $sql, array $params = []): array
     {
+        if (!empty($params) && !array_is_list($params)) {
+            [$sql, $params] = $this->resolveNamedParameters($sql, $params);
+        }
         $stmt = $this->cachedPrepare($sql);
         try {
             $stmt->execute($params ?: null);
@@ -107,6 +113,9 @@ class Connection
 
     public function fetchOne(string $sql, array $params = []): mixed
     {
+        if (!empty($params) && !array_is_list($params)) {
+            [$sql, $params] = $this->resolveNamedParameters($sql, $params);
+        }
         $stmt = $this->cachedPrepare($sql);
         try {
             $stmt->execute($params ?: null);
@@ -134,30 +143,17 @@ class Connection
     public function executeQuery(string $sql, array $params = []): Result
     {
         if (!empty($params) && !array_is_list($params)) {
-            [$sql, $params] = self::convertNamedToPositional($sql, $params);
+            [$sql, $params] = $this->resolveNamedParameters($sql, $params);
         }
 
-        $stmt = $this->cachedPrepare($sql);
+        $stmt = $this->pdo->prepare($sql);
         try {
             $stmt->execute($params ?: null);
         } catch (\PDOException $e) {
-            $stmt->closeCursor();
             throw Exception\ExceptionConverter::convert($e, $sql);
         }
 
         return new Result($stmt);
-    }
-
-    private static function convertNamedToPositional(string $sql, array $params): array
-    {
-        $positional = [];
-        $sql = preg_replace_callback('/:(\w+)/', function ($m) use ($params, &$positional) {
-            $key = $m[1];
-            $positional[] = $params[$key] ?? null;
-            return '?';
-        }, $sql);
-
-        return [$sql, $positional];
     }
 
     public function createQueryBuilder(): QueryBuilder
@@ -303,5 +299,16 @@ class Connection
         }
 
         return $this->stmtCache[$sql] = $this->pdo->prepare($sql);
+    }
+
+    private function resolveNamedParameters(string $sql, array $params): array
+    {
+        $positional = [];
+        $resolved = preg_replace_callback('/:(\w+)\b/', function (array $m) use ($params, &$positional): string {
+            $positional[] = $params[$m[1]] ?? null;
+            return '?';
+        }, $sql);
+
+        return [$resolved, $positional];
     }
 }
