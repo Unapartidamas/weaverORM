@@ -22,10 +22,18 @@ final class DateTimeType extends Type
             return \DateTimeImmutable::createFromMutable($value);
         }
 
-        $result = \DateTimeImmutable::createFromFormat($platform->getDateTimeFormat(), (string) $value);
+        $str = (string) $value;
+
+        // PyroSQL may return timestamps as microseconds (e.g. 1775205186000000)
+        if (ctype_digit($str) && strlen($str) >= 13) {
+            $seconds = (int) ($str / 1_000_000);
+            return (new \DateTimeImmutable())->setTimestamp($seconds);
+        }
+
+        $result = \DateTimeImmutable::createFromFormat($platform->getDateTimeFormat(), $str);
 
         if ($result === false) {
-            $result = new \DateTimeImmutable((string) $value);
+            $result = new \DateTimeImmutable($str);
         }
 
         return $result;
