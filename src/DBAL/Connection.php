@@ -31,22 +31,9 @@ class Connection
             return $this->pdo->exec($sql);
         }
 
-        $stmt = $this->pdo->prepare($sql);
-        $index = 1;
-
+        // Resolve object values before interpolation
+        $resolved = [];
         foreach ($params as $key => $value) {
-            $type = $types[$key] ?? PDO::PARAM_STR;
-            if ($type instanceof ParameterType) {
-                $type = $type->value;
-            } elseif (is_string($type)) {
-                $type = match ($type) {
-                    'integer', 'smallint', 'bigint', 'int' => PDO::PARAM_INT,
-                    'boolean', 'bool' => PDO::PARAM_BOOL,
-                    'binary', 'blob' => PDO::PARAM_LOB,
-                    'null' => PDO::PARAM_NULL,
-                    default => PDO::PARAM_STR,
-                };
-            }
             if (is_object($value) && !$value instanceof \BackedEnum && !$value instanceof ParameterType) {
                 if (method_exists($value, 'getId')) {
                     $value = $value->getId();
@@ -60,16 +47,17 @@ class Connection
                     );
                 }
             }
-            $stmt->bindValue($index++, $value, $type);
+            $resolved[$key] = $value;
         }
 
+        $resolved = $this->normalizeParams($sql, $resolved);
+        $sql = $this->interpolateParams($sql, $resolved);
+
         try {
-            $stmt->execute();
+            return $this->pdo->exec($sql);
         } catch (\PDOException $e) {
             throw Exception\ExceptionConverter::convert($e, $sql);
         }
-
-        return $stmt->rowCount();
     }
 
     public function prepare(string $sql): Statement
@@ -80,12 +68,9 @@ class Connection
     public function fetchAssociative(string $sql, array $params = []): array|false
     {
         $params = $this->normalizeParams($sql, $params);
-        $stmt = $this->pdo->prepare($sql);
-        foreach ($params as $i => $v) {
-            $stmt->bindValue($i + 1, $v);
-        }
+        $sql = !empty($params) ? $this->interpolateParams($sql, $params) : $sql;
         try {
-            $stmt->execute();
+            $stmt = $this->pdo->query($sql);
         } catch (\PDOException $e) {
             throw Exception\ExceptionConverter::convert($e, $sql);
         }
@@ -317,6 +302,8 @@ class Connection
                 if (method_exists($val, 'getId')) return (string) $val->getId();
                 if ($val instanceof \DateTimeInterface) return "'" . $val->format('Y-m-d H:i:s') . "'";
             }
+            // Numeric strings should not be quoted (PyroSQL does not coerce '2' to int)
+            if (is_string($val) && is_numeric($val)) return $val;
             return "'" . str_replace("'", "''", (string) $val) . "'";
         }, $sql);
     }

@@ -110,6 +110,16 @@ final class EntityHydrator implements HydratorInterface
             $mapper->setProperty($entity, $property, $phpValue);
         }
 
+        // Store FK values from BelongsTo relations for eager loading
+        if ($mapper instanceof AbstractEntityMapper) {
+            foreach ($mapper->getRelations() as $rel) {
+                $fk = $rel->getForeignKey();
+                if ($fk !== null && array_key_exists($fk, $row)) {
+                    AbstractEntityMapper::storeForeignKey($entity, $fk, $row[$fk]);
+                }
+            }
+        }
+
         if (property_exists($entity, '__weaverLoader')) {
             $entity->__weaverLoader = function (string $relation, object $ent) use ($entityClass): mixed {
                 return $this->loadOneRelation($ent, $relation, $entityClass);

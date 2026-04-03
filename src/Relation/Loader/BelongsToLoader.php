@@ -90,11 +90,10 @@ final readonly class BelongsToLoader
 
         foreach ($parents as $parent) {
             $fkValue = $parentMapper->getProperty($parent, $fkProperty);
-            $parentMapper->setProperty(
-                $parent,
-                $relProperty,
-                $fkValue !== null ? ($indexed[$fkValue] ?? null) : null,
-            );
+            $related = $fkValue !== null ? ($indexed[$fkValue] ?? null) : null;
+            if ($related !== null) {
+                $parentMapper->setProperty($parent, $relProperty, $related);
+            }
         }
 
         if ($plan->hasChildren() && $entities !== []) {
@@ -117,8 +116,13 @@ final readonly class BelongsToLoader
         \Weaver\ORM\Contract\EntityMapperInterface $parentMapper,
         RelationDefinition $relation,
     ): void {
+        $prop = $relation->getProperty();
         foreach ($parents as $parent) {
-            $parentMapper->setProperty($parent, $relation->getProperty(), null);
+            try {
+                $parentMapper->setProperty($parent, $prop, null);
+            } catch (\TypeError) {
+                // Skip: property is non-nullable (e.g., typed as Category, not ?Category)
+            }
         }
     }
 

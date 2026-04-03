@@ -58,23 +58,7 @@ final class QueryBuilder
             }
         }
 
-        $stmt = $this->connection->getNativeConnection()->prepare($expandedSql);
-
-        foreach ($expandedParams as $key => $value) {
-            $pdoType = \PDO::PARAM_STR;
-            if (is_int($value)) {
-                $pdoType = \PDO::PARAM_INT;
-            } elseif (is_bool($value)) {
-                $pdoType = \PDO::PARAM_BOOL;
-            } elseif ($value === null) {
-                $pdoType = \PDO::PARAM_NULL;
-            }
-            $stmt->bindValue($key, $value, $pdoType);
-        }
-
-        $stmt->execute();
-
-        return new Result($stmt);
+        return $this->connection->executeQuery($expandedSql, $expandedParams);
     }
 
     public function executeStatement(): int
@@ -103,23 +87,7 @@ final class QueryBuilder
             }
         }
 
-        $stmt = $this->connection->getNativeConnection()->prepare($expandedSql);
-
-        foreach ($expandedParams as $key => $value) {
-            $pdoType = \PDO::PARAM_STR;
-            if (is_int($value)) {
-                $pdoType = \PDO::PARAM_INT;
-            } elseif (is_bool($value)) {
-                $pdoType = \PDO::PARAM_BOOL;
-            } elseif ($value === null) {
-                $pdoType = \PDO::PARAM_NULL;
-            }
-            $stmt->bindValue($key, $value, $pdoType);
-        }
-
-        $stmt->execute();
-
-        return $stmt->rowCount();
+        return $this->connection->executeStatement($expandedSql, $expandedParams);
     }
 
     public function select(string ...$columns): self

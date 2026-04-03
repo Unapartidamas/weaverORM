@@ -8,6 +8,8 @@ use Weaver\ORM\Contract\EntityMapperInterface;
 
 abstract class AbstractEntityMapper implements EntityMapperInterface
 {
+    /** Stores FK values that have no dedicated entity property. */
+    private static ?\WeakMap $fkStore = null;
 
     private ?array $columnsByProperty = null;
 
@@ -18,6 +20,25 @@ abstract class AbstractEntityMapper implements EntityMapperInterface
     private ?array $persistableColumns = null;
 
     private ?array $relationsByProperty = null;
+
+    private static function fkStore(): \WeakMap
+    {
+        return self::$fkStore ??= new \WeakMap();
+    }
+
+    public static function storeForeignKey(object $entity, string $column, mixed $value): void
+    {
+        $store = self::fkStore();
+        $data = $store[$entity] ?? [];
+        $data[$column] = $value;
+        $store[$entity] = $data;
+    }
+
+    public static function getForeignKey(object $entity, string $column): mixed
+    {
+        $store = self::fkStore();
+        return ($store[$entity] ?? [])[$column] ?? null;
+    }
 
     abstract public function getEntityClass(): string;
 
@@ -122,7 +143,16 @@ abstract class AbstractEntityMapper implements EntityMapperInterface
 
     public function getProperty(object $entity, string $property): mixed
     {
-        return $entity->$property;
+        if (!property_exists($entity, $property)) {
+            return self::getForeignKey($entity, $property);
+        }
+
+        try {
+            return $entity->$property;
+        } catch (\Throwable) {
+            // Property exists but is not initialized (typed property)
+            return self::getForeignKey($entity, $property);
+        }
     }
 
     public function getColumn(string $property): ?ColumnDefinition

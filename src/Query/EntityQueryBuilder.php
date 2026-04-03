@@ -209,6 +209,8 @@ final class EntityQueryBuilder
         if (str_contains($column, '.') && !str_contains($column, ' ')) {
             [$relationName, $relColumn] = explode('.', $column, 2);
             $column = $this->resolveImplicitJoin($relationName) . '.' . $relColumn;
+        } else {
+            $column = $this->qualifyColumn($column);
         }
 
         $expr = $this->buildWhereClause($column, ...$this->normalizeOperatorValue($operatorOrValue, $value));
@@ -234,6 +236,8 @@ final class EntityQueryBuilder
         if (str_contains($column, '.') && !str_contains($column, ' ')) {
             [$relationName, $relColumn] = explode('.', $column, 2);
             $column = $this->resolveImplicitJoin($relationName) . '.' . $relColumn;
+        } else {
+            $column = $this->qualifyColumn($column);
         }
 
         $expr = $this->buildWhereClause($column, ...$this->normalizeOperatorValue($operatorOrValue, $value));
@@ -244,14 +248,14 @@ final class EntityQueryBuilder
 
     public function whereNull(string $column): static
     {
-        $this->qb->andWhere($column . ' IS NULL');
+        $this->qb->andWhere($this->qualifyColumn($column) . ' IS NULL');
 
         return $this;
     }
 
     public function whereNotNull(string $column): static
     {
-        $this->qb->andWhere($column . ' IS NOT NULL');
+        $this->qb->andWhere($this->qualifyColumn($column) . ' IS NOT NULL');
 
         return $this;
     }
@@ -688,6 +692,8 @@ final class EntityQueryBuilder
         if (str_contains($column, '.') && !str_contains($column, ' ')) {
             [$relationName, $relColumn] = explode('.', $column, 2);
             $column = $this->resolveImplicitJoin($relationName) . '.' . $relColumn;
+        } else {
+            $column = $this->qualifyColumn($column);
         }
 
         $this->qb->orderBy($column, strtoupper($direction));
@@ -700,6 +706,8 @@ final class EntityQueryBuilder
         if (str_contains($column, '.') && !str_contains($column, ' ')) {
             [$relationName, $relColumn] = explode('.', $column, 2);
             $column = $this->resolveImplicitJoin($relationName) . '.' . $relColumn;
+        } else {
+            $column = $this->qualifyColumn($column);
         }
 
         $this->qb->addOrderBy($column, strtoupper($direction));
@@ -1717,6 +1725,19 @@ final class EntityQueryBuilder
         return $joinAlias;
     }
 
+    /**
+     * Qualify a bare column name with the table alias (e.g. "slug" → "e.slug").
+     * Already qualified names (containing ".") are returned as-is.
+     */
+    private function qualifyColumn(string $column): string
+    {
+        if (str_contains($column, '.') || str_contains($column, '(') || str_contains($column, ' ')) {
+            return $column;
+        }
+
+        return $this->alias . '.' . $column;
+    }
+
     private function buildWhereClause(string $column, string $operator, mixed $value): string
     {
 
@@ -1856,30 +1877,13 @@ final class EntityQueryBuilder
                 $sql = '/* ' . str_replace('*/', '', $this->comment) . ' */ ' . $sql;
             }
 
-            $stmt = $this->connection->prepare($sql);
-            foreach ($positionalParams as $i => $val) {
-                $stmt->bindValue($i + 1, $val);
-            }
-            file_put_contents("/tmp/qb_exec.log", $sql . " | " . json_encode($positional) . "
-", FILE_APPEND); return $stmt->execute();
+            return $this->connection->executeQuery($sql, $positionalParams);
         }
 
         $sql    = $this->buildSQL();
         $params = $this->collectAllParams();
 
-        $sql = preg_replace_callback('/:(\w+)\b/', function (array $m) use ($params): string {
-            $val = $params[$m[1]] ?? null;
-            if ($val === null) return 'NULL';
-            if (is_bool($val)) return $val ? 'true' : 'false';
-            if (is_int($val) || is_float($val)) return (string) $val;
-            if (is_object($val)) {
-                if (method_exists($val, 'getId')) return (string) $val->getId();
-                if ($val instanceof \DateTimeInterface) return "'" . $val->format('Y-m-d H:i:s') . "'";
-            }
-            return "'" . str_replace("'", "''", (string) $val) . "'";
-        }, $sql);
-
-        file_put_contents("/tmp/qb.log", $sql . "\n", FILE_APPEND); return $this->connection->query($sql);
+        return $this->connection->executeQuery($sql, $params);
     }
 
     private function buildUnionSQL(): array
