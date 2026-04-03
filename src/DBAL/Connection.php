@@ -28,7 +28,7 @@ class Connection
     public function executeStatement(string $sql, array $params = [], array $types = []): int
     {
         if (empty($params)) {
-            return $this->pdo->exec($sql);
+            return (int) $this->pdo->exec($sql);
         }
 
         // Resolve object values before interpolation
@@ -54,7 +54,7 @@ class Connection
         $sql = $this->interpolateParams($sql, $resolved);
 
         try {
-            return $this->pdo->exec($sql);
+            return (int) $this->pdo->exec($sql);
         } catch (\PDOException $e) {
             throw Exception\ExceptionConverter::convert($e, $sql);
         }
