@@ -16,6 +16,7 @@ use Weaver\ORM\Mapping\Attribute\Entity;
 use Weaver\ORM\Mapping\Attribute\HasMany;
 use Weaver\ORM\Mapping\Attribute\HasOne;
 use Weaver\ORM\Mapping\Attribute\Id;
+use Weaver\ORM\Mapping\Attribute\Expire;
 use Weaver\ORM\Mapping\Attribute\SoftDeletes;
 use Weaver\ORM\Mapping\Attribute\Timestamps;
 use Weaver\ORM\Mapping\Attribute\UseUuid;
@@ -42,6 +43,13 @@ final class AttributeMapperFactory
 
         $hasSoftDeletes = $classRef->getAttributes(SoftDeletes::class) !== [];
         $hasTimestamps  = $classRef->getAttributes(Timestamps::class) !== [];
+
+        $expireAttrs = $classRef->getAttributes(Expire::class);
+        $expiry = null;
+        if ($expireAttrs !== []) {
+            $expireAttr = $expireAttrs[0]->newInstance();
+            $expiry = new ExpiryDefinition($expireAttr->duration, $expireAttr->unit);
+        }
 
         $columns   = [];
         $relations = [];
@@ -195,6 +203,7 @@ final class AttributeMapperFactory
             columns:     $columns,
             relations:   $relations,
             embedded:    $embedded,
+            expiry:      $expiry,
         );
     }
 

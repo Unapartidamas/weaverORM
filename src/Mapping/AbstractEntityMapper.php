@@ -51,6 +51,11 @@ abstract class AbstractEntityMapper implements EntityMapperInterface
         return [];
     }
 
+    public function getExpiry(): ?ExpiryDefinition
+    {
+        return null;
+    }
+
     public function getSchema(): ?string
     {
         return null;

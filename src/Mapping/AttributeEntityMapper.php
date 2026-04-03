@@ -14,6 +14,7 @@ final class AttributeEntityMapper extends AbstractEntityMapper
         private readonly array $relations,
         private readonly array $indexes = [],
         private readonly array $embedded = [],
+        private readonly ?ExpiryDefinition $expiry = null,
     ) {}
 
     public function getEntityClass(): string
@@ -44,6 +45,11 @@ final class AttributeEntityMapper extends AbstractEntityMapper
     public function getEmbedded(): array
     {
         return $this->embedded;
+    }
+
+    public function getExpiry(): ?ExpiryDefinition
+    {
+        return $this->expiry;
     }
 
     public function getPrimaryKeyColumns(): array

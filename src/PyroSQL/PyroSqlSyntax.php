@@ -203,4 +203,85 @@ final class PyroSqlSyntax
     {
         return "ALLOW {$role} TO {$permission} {$table}";
     }
+
+    // --- Data Expiry / TTL ---
+
+    public static function expireAfter(string $table, int $duration, string $unit = 'DAYS'): string
+    {
+        return "ALTER TABLE {$table} EXPIRE AFTER {$duration} " . strtoupper($unit);
+    }
+
+    public static function noExpire(string $table): string
+    {
+        return "ALTER TABLE {$table} NO EXPIRE";
+    }
+
+    // --- Diagnostic Wrappers ---
+
+    public static function profile(string $sql): string
+    {
+        return 'PROFILE ' . $sql;
+    }
+
+    public static function dryRun(string $sql): string
+    {
+        return 'DRY RUN ' . $sql;
+    }
+
+    public static function trace(string $sql): string
+    {
+        return 'TRACE ' . $sql;
+    }
+
+    // --- Admin Commands ---
+
+    public static function depends(string $table): string
+    {
+        return "DEPENDS {$table}";
+    }
+
+    public static function compact(string $table): string
+    {
+        return "COMPACT {$table}";
+    }
+
+    public static function pin(string $table): string
+    {
+        return "PIN {$table}";
+    }
+
+    public static function unpin(string $table): string
+    {
+        return "UNPIN {$table}";
+    }
+
+    public static function throttle(string $table, ?int $readQps = null, ?int $writeQps = null): string
+    {
+        if ($readQps !== null && $writeQps !== null) {
+            return "THROTTLE {$table} READ {$readQps} WRITE {$writeQps}";
+        }
+
+        $qps = $readQps ?? $writeQps ?? 0;
+        return "THROTTLE {$table} TO {$qps} QPS";
+    }
+
+    public static function throttleOff(string $table): string
+    {
+        return "THROTTLE {$table} OFF";
+    }
+
+    public static function showThrottles(): string
+    {
+        return 'SHOW THROTTLES';
+    }
+
+    public static function split(string $source, string $target1, string $target2, string $column, string $where): string
+    {
+        return "SPLIT {$source} INTO {$target1}, {$target2} ON {$column} WHERE {$where}";
+    }
+
+    public static function merge(array $sources, string $target): string
+    {
+        return 'MERGE ' . implode(', ', $sources) . " INTO {$target}";
+    }
 }

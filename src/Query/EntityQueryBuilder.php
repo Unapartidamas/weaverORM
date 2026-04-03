@@ -1141,6 +1141,32 @@ final class EntityQueryBuilder
         return $clone->buildSQL();
     }
 
+    // --- PyroSQL Diagnostic Methods ---
+
+    public function profile(): \Weaver\ORM\PyroSQL\Query\ProfileResult
+    {
+        $this->applyAllFilters();
+        $sql    = $this->buildSQL();
+        $params = $this->collectAllParams();
+        return $this->connection->profile($sql, $params);
+    }
+
+    public function dryRun(): \Weaver\ORM\PyroSQL\Query\DryRunResult
+    {
+        $this->applyAllFilters();
+        $sql    = $this->buildSQL();
+        $params = $this->collectAllParams();
+        return $this->connection->dryRun($sql, $params);
+    }
+
+    public function trace(): \Weaver\ORM\PyroSQL\Query\TraceResult
+    {
+        $this->applyAllFilters();
+        $sql    = $this->buildSQL();
+        $params = $this->collectAllParams();
+        return $this->connection->trace($sql, $params);
+    }
+
     public function dump(): static
     {
         var_dump($this->toSQL());

@@ -10,11 +10,11 @@ use Weaver\ORM\Mapping\InheritanceMapping;
 use Weaver\ORM\Mapping\MapperRegistry;
 use Weaver\ORM\Mapping\RelationType;
 
-final readonly class SchemaGenerator
+final class SchemaGenerator
 {
     public function __construct(
-        private MapperRegistry $registry,
-        private Platform $platform,
+        private readonly MapperRegistry $registry,
+        private readonly Platform $platform,
     ) {}
 
     public function generateSql(): array
@@ -128,11 +128,18 @@ final readonly class SchemaGenerator
             );
         }
 
-        return sprintf(
+        $sql = sprintf(
             'CREATE TABLE IF NOT EXISTS %s (%s)',
             $this->platform->quoteIdentifier($table),
             implode(', ', $columnDefs),
         );
+
+        $expiry = $mapper->getExpiry();
+        if ($expiry !== null && in_array($this->platform->getName(), ['pyrosql', 'postgresql'], true)) {
+            $sql .= ' ' . $expiry->toSql();
+        }
+
+        return $sql;
     }
 
     private function buildIndexSql(AbstractEntityMapper $mapper): array

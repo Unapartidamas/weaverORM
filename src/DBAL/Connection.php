@@ -5,6 +5,10 @@ declare(strict_types=1);
 namespace Weaver\ORM\DBAL;
 
 use PDO;
+use Weaver\ORM\PyroSQL\PyroSqlSyntax;
+use Weaver\ORM\PyroSQL\Query\ProfileResult;
+use Weaver\ORM\PyroSQL\Query\DryRunResult;
+use Weaver\ORM\PyroSQL\Query\TraceResult;
 
 class Connection
 {
@@ -225,6 +229,26 @@ class Connection
     public function quoteIdentifier(string $identifier): string
     {
         return $this->platform->quoteIdentifier($identifier);
+    }
+
+    // --- PyroSQL Diagnostic Queries ---
+
+    public function profile(string $sql, array $params = []): ProfileResult
+    {
+        $rows = $this->fetchAllAssociative(PyroSqlSyntax::profile($sql), $params);
+        return ProfileResult::fromRows($rows);
+    }
+
+    public function dryRun(string $sql, array $params = []): DryRunResult
+    {
+        $rows = $this->fetchAllAssociative(PyroSqlSyntax::dryRun($sql), $params);
+        return DryRunResult::fromRows($rows);
+    }
+
+    public function trace(string $sql, array $params = []): TraceResult
+    {
+        $rows = $this->fetchAllAssociative(PyroSqlSyntax::trace($sql), $params);
+        return TraceResult::fromRows($rows);
     }
 
     public function getDatabasePlatform(): Platform
