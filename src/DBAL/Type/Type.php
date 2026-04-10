@@ -51,6 +51,7 @@ abstract class Type
             new JsonType(),
             new TextType(),
             new BlobType(),
+            new GuidType(),
         ];
 
         foreach ($builtins as $type) {

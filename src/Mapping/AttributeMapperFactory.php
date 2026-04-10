@@ -16,7 +16,6 @@ use Weaver\ORM\Mapping\Attribute\Entity;
 use Weaver\ORM\Mapping\Attribute\HasMany;
 use Weaver\ORM\Mapping\Attribute\HasOne;
 use Weaver\ORM\Mapping\Attribute\Id;
-use Weaver\ORM\Mapping\Attribute\Expire;
 use Weaver\ORM\Mapping\Attribute\SoftDeletes;
 use Weaver\ORM\Mapping\Attribute\Timestamps;
 use Weaver\ORM\Mapping\Attribute\UseUuid;
@@ -44,13 +43,6 @@ final class AttributeMapperFactory
         $hasSoftDeletes = $classRef->getAttributes(SoftDeletes::class) !== [];
         $hasTimestamps  = $classRef->getAttributes(Timestamps::class) !== [];
 
-        $expireAttrs = $classRef->getAttributes(Expire::class);
-        $expiry = null;
-        if ($expireAttrs !== []) {
-            $expireAttr = $expireAttrs[0]->newInstance();
-            $expiry = new ExpiryDefinition($expireAttr->duration, $expireAttr->unit);
-        }
-
         $columns   = [];
         $relations = [];
         $embedded  = [];
@@ -63,12 +55,25 @@ final class AttributeMapperFactory
 
                 $idAttr = $idAttrs[0]->newInstance();
 
+                // Auto-detect UUID: if property is typed as ?string or string,
+                // use 'guid' type and disable autoIncrement unless explicitly set.
+                $idType = $idAttr->type;
+                $idAutoIncrement = $idAttr->autoIncrement;
+                $propType = $propRef->getType();
+                if ($propType instanceof \ReflectionNamedType) {
+                    $typeName = $propType->getName();
+                    if ($typeName === 'string' && $idType === 'integer') {
+                        $idType = 'guid';
+                        $idAutoIncrement = false;
+                    }
+                }
+
                 $columns[] = new ColumnDefinition(
                     column:        $this->toSnakeCase($propName),
                     property:      $propName,
-                    type:          $idAttr->type,
+                    type:          $idType,
                     primary:       true,
-                    autoIncrement: $idAttr->autoIncrement,
+                    autoIncrement: $idAutoIncrement,
                 );
                 continue;
             }
@@ -99,7 +104,7 @@ final class AttributeMapperFactory
                     $columns[] = new ColumnDefinition(
                         column:        $columnName,
                         property:      $propName,
-                        type:          $colAttr->type,
+                        type:          $this->inferTypeFromProperty($propRef, $colAttr->type),
                         primary:       $colAttr->primary,
                         autoIncrement: $colAttr->autoIncrement,
                         nullable:      $colAttr->nullable,
@@ -203,7 +208,6 @@ final class AttributeMapperFactory
             columns:     $columns,
             relations:   $relations,
             embedded:    $embedded,
-            expiry:      $expiry,
         );
     }
 
@@ -237,6 +241,33 @@ final class AttributeMapperFactory
         }
 
         return strtolower(ltrim($snake, '_'));
+    }
+
+    private function inferTypeFromProperty(\ReflectionProperty $prop, string $declaredType): string
+    {
+        // Only auto-detect when the Column attribute uses the default 'string' type
+        if ($declaredType !== 'string') {
+            return $declaredType;
+        }
+
+        $refType = $prop->getType();
+        if (!$refType instanceof \ReflectionNamedType) {
+            return $declaredType;
+        }
+
+        $typeName = $refType->getName();
+
+        return match ($typeName) {
+            'int'                      => 'integer',
+            'float'                    => 'float',
+            'bool'                     => 'boolean',
+            'array'                    => 'json',
+            'DateTimeImmutable',
+            '\DateTimeImmutable'       => 'datetime_immutable',
+            'DateTime',
+            '\DateTime'                => 'datetime',
+            default                    => $declaredType,
+        };
     }
 
     private function resolveUuidType(\ReflectionProperty $prop): ?string

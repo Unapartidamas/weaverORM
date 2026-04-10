@@ -98,7 +98,7 @@ class EntityRepository
         return $qb->count();
     }
 
-    protected function query(): EntityQueryBuilder
+    public function query(): EntityQueryBuilder
     {
         $connection = $this->workspace->getReadConnection();
         $mapper     = $this->getMapper();

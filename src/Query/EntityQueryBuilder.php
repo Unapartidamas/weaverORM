@@ -209,10 +209,9 @@ final class EntityQueryBuilder
         if (str_contains($column, '.') && !str_contains($column, ' ')) {
             [$relationName, $relColumn] = explode('.', $column, 2);
             $column = $this->resolveImplicitJoin($relationName) . '.' . $relColumn;
-        } else {
-            $column = $this->qualifyColumn($column);
         }
 
+        $column = $this->resolveColumnName($column);
         $expr = $this->buildWhereClause($column, ...$this->normalizeOperatorValue($operatorOrValue, $value));
         $this->qb->andWhere($expr);
 
@@ -236,10 +235,9 @@ final class EntityQueryBuilder
         if (str_contains($column, '.') && !str_contains($column, ' ')) {
             [$relationName, $relColumn] = explode('.', $column, 2);
             $column = $this->resolveImplicitJoin($relationName) . '.' . $relColumn;
-        } else {
-            $column = $this->qualifyColumn($column);
         }
 
+        $column = $this->resolveColumnName($column);
         $expr = $this->buildWhereClause($column, ...$this->normalizeOperatorValue($operatorOrValue, $value));
         $this->qb->orWhere($expr);
 
@@ -248,14 +246,14 @@ final class EntityQueryBuilder
 
     public function whereNull(string $column): static
     {
-        $this->qb->andWhere($this->qualifyColumn($column) . ' IS NULL');
+        $this->qb->andWhere($column . ' IS NULL');
 
         return $this;
     }
 
     public function whereNotNull(string $column): static
     {
-        $this->qb->andWhere($this->qualifyColumn($column) . ' IS NOT NULL');
+        $this->qb->andWhere($column . ' IS NOT NULL');
 
         return $this;
     }
@@ -692,10 +690,9 @@ final class EntityQueryBuilder
         if (str_contains($column, '.') && !str_contains($column, ' ')) {
             [$relationName, $relColumn] = explode('.', $column, 2);
             $column = $this->resolveImplicitJoin($relationName) . '.' . $relColumn;
-        } else {
-            $column = $this->qualifyColumn($column);
         }
 
+        $column = $this->resolveColumnName($column);
         $this->qb->orderBy($column, strtoupper($direction));
 
         return $this;
@@ -706,8 +703,6 @@ final class EntityQueryBuilder
         if (str_contains($column, '.') && !str_contains($column, ' ')) {
             [$relationName, $relColumn] = explode('.', $column, 2);
             $column = $this->resolveImplicitJoin($relationName) . '.' . $relColumn;
-        } else {
-            $column = $this->qualifyColumn($column);
         }
 
         $this->qb->addOrderBy($column, strtoupper($direction));
@@ -1139,32 +1134,6 @@ final class EntityQueryBuilder
         $clone->applyAllFilters();
 
         return $clone->buildSQL();
-    }
-
-    // --- PyroSQL Diagnostic Methods ---
-
-    public function profile(): \Weaver\ORM\PyroSQL\Query\ProfileResult
-    {
-        $this->applyAllFilters();
-        $sql    = $this->buildSQL();
-        $params = $this->collectAllParams();
-        return $this->connection->profile($sql, $params);
-    }
-
-    public function dryRun(): \Weaver\ORM\PyroSQL\Query\DryRunResult
-    {
-        $this->applyAllFilters();
-        $sql    = $this->buildSQL();
-        $params = $this->collectAllParams();
-        return $this->connection->dryRun($sql, $params);
-    }
-
-    public function trace(): \Weaver\ORM\PyroSQL\Query\TraceResult
-    {
-        $this->applyAllFilters();
-        $sql    = $this->buildSQL();
-        $params = $this->collectAllParams();
-        return $this->connection->trace($sql, $params);
     }
 
     public function dump(): static
@@ -1751,19 +1720,6 @@ final class EntityQueryBuilder
         return $joinAlias;
     }
 
-    /**
-     * Qualify a bare column name with the table alias (e.g. "slug" → "e.slug").
-     * Already qualified names (containing ".") are returned as-is.
-     */
-    private function qualifyColumn(string $column): string
-    {
-        if (str_contains($column, '.') || str_contains($column, '(') || str_contains($column, ' ')) {
-            return $column;
-        }
-
-        return $this->alias . '.' . $column;
-    }
-
     private function buildWhereClause(string $column, string $operator, mixed $value): string
     {
 
@@ -1776,6 +1732,16 @@ final class EntityQueryBuilder
             };
 
             return sprintf('%s %s %s', $column, $operator, $literal);
+        }
+
+        // Auto-convert = NULL to IS NULL and != NULL to IS NOT NULL
+        if ($value === null) {
+            if ($operator === '=' || $operator === '==') {
+                return sprintf('%s IS NULL', $column);
+            }
+            if ($operator === '!=' || $operator === '<>') {
+                return sprintf('%s IS NOT NULL', $column);
+            }
         }
 
         $param = $this->buildParameterName($column);
@@ -1903,13 +1869,36 @@ final class EntityQueryBuilder
                 $sql = '/* ' . str_replace('*/', '', $this->comment) . ' */ ' . $sql;
             }
 
-            return $this->connection->executeQuery($sql, $positionalParams);
+            $stmt = $this->connection->prepare($sql);
+            foreach ($positionalParams as $i => $val) {
+                if ($val instanceof \DateTimeInterface) {
+                    $val = $val->format('Y-m-d H:i:s');
+                }
+                $stmt->bindValue($i + 1, $val);
+            }
+            return $stmt->execute();
         }
 
         $sql    = $this->buildSQL();
         $params = $this->collectAllParams();
+        $types  = $this->qb->getParameterTypes();
 
-        return $this->connection->executeQuery($sql, $params);
+        $stmt = $this->connection->prepare($sql);
+        $index = 1;
+        foreach ($params as $key => $val) {
+            $type = $types[$key] ?? \PDO::PARAM_STR;
+            if ($type instanceof ParameterType) {
+                $type = $type->value;
+            } elseif (is_string($type)) {
+                $type = \PDO::PARAM_STR;
+            }
+            // Convert DateTimeInterface objects to string for PDO binding
+            if ($val instanceof \DateTimeInterface) {
+                $val = $val->format('Y-m-d H:i:s');
+            }
+            $stmt->bindValue($index++, $val, $type);
+        }
+        return $stmt->execute();
     }
 
     private function buildUnionSQL(): array
@@ -2241,5 +2230,21 @@ final class EntityQueryBuilder
         $params = $this->collectAllParams();
 
         return md5($sql . ':' . serialize($params));
+    }
+
+    /**
+     * Resolve a property name to its database column name.
+     * Allows using camelCase property names in where() calls.
+     */
+    private function resolveColumnName(string $name): string
+    {
+        if (str_contains($name, '.') || str_contains($name, ' ')) {
+            return $name;
+        }
+        $col = $this->mapper->getColumn($name);
+        if ($col !== null) {
+            return $col->column;
+        }
+        return $name;
     }
 }

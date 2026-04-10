@@ -58,6 +58,10 @@ final class WeaverExtension extends Extension
             new Reference(ConnectionRegistry::class),
             null,
             $defaultConnection,
+            new Reference(MapperRegistry::class),
+            new Reference(\Weaver\ORM\Hydration\EntityHydrator::class),
+            new Reference(\Weaver\ORM\Event\LifecycleEventDispatcher::class),
+            new Reference(\Weaver\ORM\Persistence\InsertOrderResolver::class),
         ]);
         $workspaceRegistryDef->setPublic(true);
         $container->setDefinition(WorkspaceRegistry::class, $workspaceRegistryDef);

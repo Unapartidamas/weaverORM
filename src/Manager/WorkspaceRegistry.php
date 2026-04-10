@@ -5,8 +5,13 @@ declare(strict_types=1);
 namespace Weaver\ORM\Manager;
 
 use Weaver\ORM\Connection\ConnectionRegistry;
+use Weaver\ORM\Event\LifecycleEventDispatcher;
+use Weaver\ORM\Hydration\EntityHydrator;
 use Weaver\ORM\Mapping\Attribute\Connection;
+use Weaver\ORM\Mapping\MapperRegistry;
 use Weaver\ORM\Manager\Exception\ManagerNotFoundException;
+use Weaver\ORM\Persistence\InsertOrderResolver;
+use Weaver\ORM\Persistence\UnitOfWork;
 
 final class WorkspaceRegistry
 {
@@ -16,8 +21,12 @@ final class WorkspaceRegistry
 
     public function __construct(
         private readonly ConnectionRegistry $connectionRegistry,
-        private readonly \Closure $workspaceFactory,
+        private readonly ?\Closure $workspaceFactory = null,
         string $defaultName = 'default',
+        private readonly ?MapperRegistry $mapperRegistry = null,
+        private readonly ?EntityHydrator $hydrator = null,
+        private readonly ?LifecycleEventDispatcher $eventDispatcher = null,
+        private readonly ?InsertOrderResolver $insertOrderResolver = null,
     ) {
         $this->defaultName = $defaultName;
     }
@@ -30,7 +39,30 @@ final class WorkspaceRegistry
 
         if (!isset($this->workspaces[$connectionName])) {
             $connection = $this->connectionRegistry->getConnection($connectionName);
-            $this->workspaces[$connectionName] = ($this->workspaceFactory)($connectionName, $connection);
+
+            if ($this->workspaceFactory !== null) {
+                $this->workspaces[$connectionName] = ($this->workspaceFactory)($connectionName, $connection);
+            } else {
+                $mapperRegistry = $this->mapperRegistry ?? throw new \LogicException(
+                    'WorkspaceRegistry requires either a workspace factory Closure or a MapperRegistry instance.',
+                );
+                $hydrator = $this->hydrator ?? new EntityHydrator($mapperRegistry, $connection);
+                $eventDispatcher = $this->eventDispatcher ?? new LifecycleEventDispatcher();
+                $insertOrderResolver = $this->insertOrderResolver ?? new InsertOrderResolver($mapperRegistry);
+                $unitOfWork = new UnitOfWork(
+                    $connection,
+                    $mapperRegistry,
+                    $hydrator,
+                    $eventDispatcher,
+                    $insertOrderResolver,
+                );
+                $this->workspaces[$connectionName] = new EntityWorkspace(
+                    $connectionName,
+                    $connection,
+                    $mapperRegistry,
+                    $unitOfWork,
+                );
+            }
         }
 
         return $this->workspaces[$connectionName];

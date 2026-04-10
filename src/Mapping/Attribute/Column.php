@@ -17,5 +17,6 @@ final class Column
         public readonly ?string $default = null,
         public readonly ?string $comment = null,
         public readonly bool $unsigned = false,
+        public readonly bool $unique = false,
     ) {}
 }
