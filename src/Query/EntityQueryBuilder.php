@@ -89,6 +89,16 @@ final class EntityQueryBuilder
 
     private array $implicitJoins = [];
 
+    /**
+     * If non-null, every entity hydrated by first()/get() is registered
+     * with this UnitOfWork so subsequent property mutations are tracked.
+     * EntityRepository::query() wires this on; raw EntityQueryBuilder
+     * users pay no observability tax.
+     */
+    private ?\Weaver\ORM\Persistence\UnitOfWork $trackingUoW = null;
+
+    private bool $trackingEnabled = true;
+
     public function __construct(
         private readonly Connection $connection,
         private readonly string $entityClass,
@@ -103,6 +113,38 @@ final class EntityQueryBuilder
 
         $this->qb->from($mapper->getTableName(), $this->alias);
         $this->qb->select($this->alias . '.*');
+    }
+
+    /**
+     * Wire the UnitOfWork that should receive hydrated entities.
+     * EntityRepository::query() calls this; external callers normally
+     * don't need to.
+     */
+    public function setUnitOfWork(\Weaver\ORM\Persistence\UnitOfWork $uow): static
+    {
+        $this->trackingUoW = $uow;
+        return $this;
+    }
+
+    /**
+     * Opt out of UoW tracking for this query (read-only / projection use).
+     */
+    public function withoutTracking(): static
+    {
+        $this->trackingEnabled = false;
+        return $this;
+    }
+
+    private function trackHydratedEntities(EntityCollection $collection): void
+    {
+        if (!$this->trackingEnabled || $this->trackingUoW === null || $collection->isEmpty()) {
+            return;
+        }
+        foreach ($collection as $entity) {
+            if (is_object($entity)) {
+                $this->trackingUoW->track($entity, $this->entityClass);
+            }
+        }
     }
 
     public function __clone(): void
@@ -1177,6 +1219,7 @@ final class EntityQueryBuilder
 
         $this->eagerLoadRelations($collection, array_merge($this->eagerLoads, $with));
         $this->applyWithCounts($collection, $rows);
+        $this->trackHydratedEntities($collection);
 
         return $collection;
     }
@@ -1213,6 +1256,7 @@ final class EntityQueryBuilder
 
         $collection = $this->hydrateCollection($rows);
         $this->eagerLoadRelations($collection, array_merge($this->eagerLoads, $with));
+        $this->trackHydratedEntities($collection);
 
         $result = $collection->first();
 

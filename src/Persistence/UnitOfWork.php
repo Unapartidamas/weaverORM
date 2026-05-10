@@ -180,6 +180,7 @@ final class UnitOfWork
                     $originalValues[$colName] = null;
                 }
             } else {
+                $platform = $this->connection->getDatabasePlatform();
                 foreach ($mapper->getColumns() as $col) {
                     if ($col->isPrimary() || $col->isVirtual() || $col->isGenerated()) {
                         continue;
@@ -187,7 +188,10 @@ final class UnitOfWork
                     $newVal = $mapper->getProperty($managedEntity, $col->getProperty());
                     $oldVal = $mapper->getProperty($snapshot, $col->getProperty());
                     if ($newVal !== $oldVal) {
-                        $diff[$col->getColumn()]           = $newVal;
+                        $type = \Weaver\ORM\DBAL\Type\Type::getType($col->getType());
+                        $diff[$col->getColumn()] = $newVal instanceof \BackedEnum
+                            ? $newVal->value
+                            : $type->convertToDatabaseValue($newVal, $platform);
                         $originalValues[$col->getColumn()] = $oldVal;
                     }
                 }
@@ -468,6 +472,7 @@ final class UnitOfWork
                 $originalValues[$colName] = null;
             }
         } else {
+            $platform = $this->connection->getDatabasePlatform();
             foreach ($mapper->getColumns() as $col) {
                 if ($col->isPrimary() || $col->isVirtual() || $col->isGenerated()) {
                     continue;
@@ -475,7 +480,10 @@ final class UnitOfWork
                 $newVal = $mapper->getProperty($entity, $col->getProperty());
                 $oldVal = $mapper->getProperty($snapshot, $col->getProperty());
                 if ($newVal !== $oldVal) {
-                    $diff[$col->getColumn()]           = $newVal;
+                    $type = \Weaver\ORM\DBAL\Type\Type::getType($col->getType());
+                    $diff[$col->getColumn()] = $newVal instanceof \BackedEnum
+                        ? $newVal->value
+                        : $type->convertToDatabaseValue($newVal, $platform);
                     $originalValues[$col->getColumn()] = $oldVal;
                 }
             }

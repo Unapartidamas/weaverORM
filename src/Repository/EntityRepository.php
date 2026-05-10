@@ -28,6 +28,8 @@ class EntityRepository
         $mapper   = $this->getMapper();
         $pkColumn = $mapper->getPrimaryKey();
 
+        // query() returns a builder pre-wired with the UoW, so the
+        // entity returned by ->first() is already tracked.
         return $this->query()
             ->where($pkColumn, $id)
             ->first();
@@ -105,12 +107,19 @@ class EntityRepository
         $registry   = $this->workspace->getMapperRegistry();
         $hydrator   = new \Weaver\ORM\Hydration\EntityHydrator($registry, $connection);
 
-        return new EntityQueryBuilder(
+        $qb = new EntityQueryBuilder(
             $connection,
             $this->entityClass,
             $mapper,
             $hydrator,
         );
+
+        // Wire UoW tracking so entities loaded via this query become
+        // managed and any subsequent property mutations are detected
+        // by push().
+        $qb->setUnitOfWork($this->workspace->getUnitOfWork());
+
+        return $qb;
     }
 
     public function scope(string $name): ScopedQuery
